@@ -144,7 +144,7 @@ const Index = () => {
       <CompanyStats />
 
       {/* Packages Section */}
-      <section className="py-20 bg-jade">
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center mb-8">
@@ -152,10 +152,10 @@ const Index = () => {
                 <div className="w-6 h-6 bg-golden rounded-full"></div>
               </div>
             </div>
-            <h2 className="font-display text-4xl font-bold text-white mb-6">
+            <h2 className="font-display text-4xl font-bold text-golden mb-6">
               Popular Hajj Packages 2026
             </h2>
-            <p className="font-body text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
+            <p className="font-body text-xl text-foreground/90 max-w-4xl mx-auto leading-relaxed">
               Our popular Hajj packages for 2026 have been meticulously crafted to ensure a seamless and memorable journey. We 
               prioritize our member's comfort, safety, and well-being throughout their Hajj pilgrimage, providing a worry-free experience.
             </p>
@@ -188,7 +188,7 @@ const Index = () => {
               </div>
               <div className="w-16 h-1 bg-golden"></div>
             </div>
-            <h2 className="font-display text-4xl font-bold text-sapphire mb-6">
+            <h2 className="font-display text-4xl font-bold text-golden mb-6">
               Key Highlights: Insha Hajj Umrah Agency
             </h2>
             <p className="font-body text-xl text-muted-foreground max-w-4xl mx-auto">
@@ -215,11 +215,11 @@ const Index = () => {
       </section>
 
       {/* Consultants Section */}
-      <section className="py-20 bg-cream">
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-16">
             <div className="mb-8 lg:mb-0">
-              <h2 className="font-display text-4xl font-bold text-sapphire mb-6">
+              <h2 className="font-display text-4xl font-bold text-golden mb-6">
                 Our distinguished Shariah consultants
               </h2>
               <p className="font-body text-lg text-muted-foreground max-w-2xl">
@@ -249,7 +249,7 @@ const Index = () => {
       </section>
 
       {/* Customized Packages */}
-      <section className="py-20 bg-gradient-jade relative overflow-hidden">
+      <section className="py-20 bg-background relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-32 h-32 border-2 border-white/30 rounded-full"></div>
           <div className="absolute bottom-10 right-10 w-48 h-48 border border-white/20 rounded-full"></div>
@@ -257,13 +257,13 @@ const Index = () => {
         </div>
         
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="font-display text-4xl font-bold text-white mb-8">
+          <h2 className="font-display text-4xl font-bold text-golden mb-8">
             Customized Umrah packages from Bangladesh
           </h2>
-          <p className="font-body text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
+          <p className="font-body text-xl text-foreground/90 max-w-3xl mx-auto leading-relaxed mb-8">
             We specialize in creating packages that are customized to your needs.
           </p>
-          <p className="font-body text-lg text-white/80 max-w-3xl mx-auto leading-relaxed mb-12">
+          <p className="font-body text-lg text-foreground/80 max-w-3xl mx-auto leading-relaxed mb-12">
             Allow us to offer you a personalized Umrah experience tailored to your travel dates, 
             budget, and hotel preferences.
           </p>
@@ -286,7 +286,7 @@ const Index = () => {
                   <div className="w-6 h-6 bg-golden rounded-full"></div>
                 </div>
               </div>
-              <h2 className="font-display text-4xl font-bold text-sapphire mb-8">
+              <h2 className="font-display text-4xl font-bold text-golden mb-8">
                 Video tutorials on Umrah journey
               </h2>
               <p className="font-body text-lg text-muted-foreground leading-relaxed mb-8">
@@ -342,7 +342,7 @@ const Index = () => {
       </section>
 
       {/* Client Testimonials */}
-      <section className="py-20 bg-cream relative">
+      <section className="py-20 bg-background relative">
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{ backgroundImage: "url('https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=1200&h=600&fit=crop')" }}
@@ -350,7 +350,7 @@ const Index = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="font-display text-4xl font-bold text-sapphire mb-8">
+            <h2 className="font-display text-4xl font-bold text-golden mb-8">
               Client testimonials
             </h2>
           </div>
@@ -395,11 +395,11 @@ const Index = () => {
       </section>
 
       {/* Insha Service Area */}
-      <section className="py-20 bg-jade-light relative">
+      <section className="py-20 bg-background relative">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="bg-white rounded-2xl p-8 shadow-elevated">
-              <h2 className="font-display text-3xl font-bold text-sapphire mb-6">
+              <h2 className="font-display text-3xl font-bold text-golden mb-6">
                 Insha Service Area
               </h2>
               <p className="font-body text-muted-foreground leading-relaxed mb-8">
@@ -484,7 +484,7 @@ const Index = () => {
       {/* Apply for Visa */}
       <section className="py-20 bg-background text-center">
         <div className="container mx-auto px-4">
-          <h2 className="font-display text-4xl font-bold text-sapphire mb-8">
+          <h2 className="font-display text-4xl font-bold text-golden mb-8">
             Apply for an Umrah visa and experience the hassle-free journey to the city of Makkah.
           </h2>
           <Button 

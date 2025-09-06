@@ -8,9 +8,9 @@
 
 @layer base {
   :root {
-    /* Islamic-inspired color palette */
-    --background: 0 0% 98%;
-    --foreground: 210 50% 15%;
+    /* Islamic-inspired color palette - Dark Theme */
+    --background: 210 50% 15%;
+    --foreground: 0 0% 98%;
 
     /* Deep Sapphire Blue - Trust & Wisdom */
     --sapphire: 210 85% 18%;
@@ -31,18 +31,18 @@
     --maroon: 0 100% 25%;
     --maroon-light: 0 85% 35%;
 
-    /* Neutral tones */
-    --cream: 45 20% 97%;
-    --beige: 45 15% 90%;
-    --beige-dark: 45 12% 80%;
+    /* Neutral tones for dark theme */
+    --cream: 210 45% 20%;
+    --beige: 210 40% 25%;
+    --beige-dark: 210 35% 30%;
 
     /* Semantic color mappings */
     --primary: var(--sapphire);
-    --primary-foreground: var(--cream);
+    --primary-foreground: 0 0% 98%;
     --primary-light: var(--sapphire-light);
 
     --secondary: var(--jade);
-    --secondary-foreground: var(--cream);
+    --secondary-foreground: 0 0% 98%;
     --secondary-light: var(--jade-light);
 
     --accent: var(--golden);
@@ -50,10 +50,10 @@
     --accent-light: var(--golden-light);
 
     --card: var(--cream);
-    --card-foreground: var(--foreground);
+    --card-foreground: 0 0% 98%;
 
     --muted: var(--beige);
-    --muted-foreground: 210 25% 45%;
+    --muted-foreground: 210 25% 75%;
 
     --border: var(--beige-dark);
     --input: var(--beige);
