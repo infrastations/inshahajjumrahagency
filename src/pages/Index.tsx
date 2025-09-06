@@ -1,11 +1,18 @@
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
+import CompanyStats from '@/components/CompanyStats';
 import PackageCard from '@/components/PackageCard';
 import ConsultantCard from '@/components/ConsultantCard';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { ScrollArea } from '@/components/ui/scroll-area';
 import { ArrowRight, Users, MapPin, Clock, Plane, Star, PlayCircle, Map, Phone } from 'lucide-react';
+import muslimScholar1 from '@/assets/muslim-scholar-1.jpg';
+import muslimScholar2 from '@/assets/muslim-scholar-2.jpg';
+import muslimScholar3 from '@/assets/muslim-scholar-3.jpg';
+import muslimScholar4 from '@/assets/muslim-scholar-4.jpg';
+import muslimScholar5 from '@/assets/muslim-scholar-5.jpg';
 
 const Index = () => {
   const packages = [
@@ -67,31 +74,31 @@ const Index = () => {
       name: "Dr. Muhammad Tazammol Hoque",
       title: "Associate Professor",
       department: "Dept. of Islamic Studies, Jagannath University",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop"
+      image: muslimScholar1
     },
     {
       name: "Dr. Muhammad Saleh Uddin", 
       title: "Associate Professor",
       department: "Dept. of Islamic Studies, Jagannath University", 
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=400&fit=crop"
+      image: muslimScholar2
     },
     {
       name: "Dr. Muhammad Ahsan Ullah",
       title: "Associate Professor", 
       department: "Dept. of Islamic Studies, Jagannath University",
-      image: "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?w=300&h=400&fit=crop"
+      image: muslimScholar3
     },
     {
       name: "Tareque Bin Atique",
       title: "Associate Professor",
       department: "Dept. of Islamic Studies, Jagannath University",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=400&fit=crop"
+      image: muslimScholar4
     },
     {
       name: "Shaikh Mijanur Rahman",
       title: "B.A (hons), M.A (DU) Imam & Khatib", 
       department: "Ashford Mosque, England",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&h=400&fit=crop"
+      image: muslimScholar5
     }
   ];
 
@@ -102,14 +109,39 @@ const Index = () => {
   ];
 
   const serviceAreas = [
-    "Bagerhat", "Bandarban", "Barguna", "Barisal", "Bhola", "Bogra", "Brahmanbaria", "Chandpur",
-    "Chittagong", "Chuadanga", "Cox's Bazar", "Cumilla"
+    // Dhaka Division
+    "Dhaka", "Faridpur", "Gazipur", "Gopalganj", "Kishoreganj", "Madaripur", "Manikganj", "Munshiganj", 
+    "Narayanganj", "Narsingdi", "Rajbari", "Shariatpur", "Tangail",
+    
+    // Chittagong Division  
+    "Chittagong", "Bandarban", "Brahmanbaria", "Chandpur", "Comilla", "Cox's Bazar", "Feni", "Khagrachhari", 
+    "Lakshmipur", "Noakhali", "Rangamati",
+    
+    // Rajshahi Division
+    "Rajshahi", "Bogura", "Joypurhat", "Naogaon", "Natore", "Nawabganj", "Pabna", "Sirajganj",
+    
+    // Khulna Division
+    "Khulna", "Bagerhat", "Chuadanga", "Jessore", "Jhenaidah", "Kushtia", "Magura", "Meherpur", 
+    "Narail", "Satkhira",
+    
+    // Barishal Division
+    "Barishal", "Barguna", "Bhola", "Jhalokati", "Patuakhali", "Pirojpur",
+    
+    // Sylhet Division
+    "Sylhet", "Habiganj", "Moulvibazar", "Sunamganj",
+    
+    // Rangpur Division
+    "Rangpur", "Dinajpur", "Gaibandha", "Kurigram", "Lalmonirhat", "Nilphamari", "Panchagarh", "Thakurgaon",
+    
+    // Mymensingh Division
+    "Mymensingh", "Jamalpur", "Netrokona", "Sherpur"
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
       <Hero />
+      <CompanyStats />
 
       {/* Packages Section */}
       <section className="py-20 bg-jade">
@@ -157,11 +189,11 @@ const Index = () => {
               <div className="w-16 h-1 bg-golden"></div>
             </div>
             <h2 className="font-display text-4xl font-bold text-sapphire mb-6">
-              Key Highlights: Hijaz Hajj Umrah Ltd.
+              Key Highlights: Insha Hajj Umrah Agency
             </h2>
             <p className="font-body text-xl text-muted-foreground max-w-4xl mx-auto">
               With a steadfast commitment to <span className="text-sapphire font-semibold">excellence</span>, 
-              Hijaz Hajj Umrah Ltd. has achieved remarkable milestones in serving the pilgrims' community.
+              Insha Hajj Umrah Agency has achieved remarkable milestones in serving the pilgrims' community.
             </p>
           </div>
 
@@ -362,45 +394,83 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Hijaz Service Area */}
+      {/* Insha Service Area */}
       <section className="py-20 bg-jade-light relative">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="bg-white rounded-2xl p-8 shadow-elevated">
               <h2 className="font-display text-3xl font-bold text-sapphire mb-6">
-                Hijaz Service Area
+                Insha Service Area
               </h2>
               <p className="font-body text-muted-foreground leading-relaxed mb-8">
-                Find your nearby Hajj & Umrah agency associated with Hijaz Hajj Umrah Ltd. Bangladesh. 
+                Find your nearby Hajj & Umrah agency associated with Insha Hajj Umrah Agency Bangladesh. 
                 Identify the trusted Umrah agents in your area and get in touch with them to facilitate 
                 your next holy journey to Makkah and Madina.
               </p>
 
-              <div className="grid grid-cols-2 gap-4 mb-8">
-                {serviceAreas.map((area, index) => (
-                  <div key={index} className="flex items-center space-x-2">
-                    <MapPin className="w-4 h-4 text-jade" />
-                    <span className="font-body text-sm text-foreground">{area}</span>
-                  </div>
-                ))}
-              </div>
+              <ScrollArea className="h-64 mb-8">
+                <div className="grid grid-cols-2 gap-4 pr-4">
+                  {serviceAreas.map((area, index) => (
+                    <div key={index} className="flex items-center space-x-2">
+                      <MapPin className="w-4 h-4 text-jade" />
+                      <span className="font-body text-sm text-foreground">{area}</span>
+                    </div>
+                  ))}
+                </div>
+              </ScrollArea>
             </div>
 
             <div className="relative">
               <div 
                 className="h-96 bg-cover bg-center rounded-2xl relative overflow-hidden"
-                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop')" }}
+                style={{ 
+                  backgroundImage: "url('https://images.unsplash.com/photo-1519302959554-a75be0afc82a?w=600&h=400&fit=crop')",
+                  backgroundColor: '#5C8D89'
+                }}
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-sapphire/60 to-transparent"></div>
+                
+                {/* Map visualization overlay */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="relative w-full h-full">
+                    {/* Dhaka marker */}
+                    <div className="absolute bottom-24 right-16">
+                      <div className="w-8 h-8 bg-golden rounded-full flex items-center justify-center shadow-lg animate-pulse">
+                        <MapPin className="w-4 h-4 text-sapphire" />
+                      </div>
+                      <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-white/90 px-2 py-1 rounded text-xs font-semibold text-sapphire">
+                        DHAKA
+                      </div>
+                    </div>
+                    
+                    {/* Flight path */}
+                    <div className="absolute bottom-24 right-16 w-32 h-px bg-golden/60 transform -rotate-45 origin-left">
+                      <div className="absolute -top-2 -right-2">
+                        <Plane className="w-4 h-4 text-golden animate-pulse" />
+                      </div>
+                    </div>
+                    
+                    {/* Mecca marker */}
+                    <div className="absolute top-16 left-20">
+                      <div className="w-8 h-8 bg-golden rounded-full flex items-center justify-center shadow-lg animate-pulse">
+                        <div className="w-3 h-3 bg-sapphire rounded-full"></div>
+                      </div>
+                      <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-white/90 px-2 py-1 rounded text-xs font-semibold text-sapphire">
+                        MECCA
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 <div className="absolute bottom-8 left-8 right-8">
                   <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20">
                     <div className="flex items-center justify-between text-white">
-                      <span className="font-body font-semibold">DHAKA</span>
+                      <span className="font-body font-semibold">BANGLADESH</span>
                       <div className="flex items-center space-x-2">
                         <div className="w-6 h-6 bg-golden rounded-full flex items-center justify-center">
                           <Plane className="w-3 h-3 text-sapphire" />
                         </div>
-                        <span className="font-body">MECCA</span>
+                        <span className="font-body">SAUDI ARABIA</span>
                       </div>
                     </div>
                   </div>
