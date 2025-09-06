@@ -2,41 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Insha Hajj Umrah Agency Design System - Islamic & Modern Aesthetic */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Islamic-inspired color palette */
+    --background: 0 0% 98%;
+    --foreground: 210 50% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Deep Sapphire Blue - Trust & Wisdom */
+    --sapphire: 210 85% 18%;
+    --sapphire-light: 210 75% 25%;
+    --sapphire-dark: 210 90% 12%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Golden Ochre - Sacred & Warmth */
+    --golden: 45 85% 55%;
+    --golden-light: 45 80% 65%;
+    --golden-dark: 45 90% 45%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Soft Jade Green - Tranquility & Growth */
+    --jade: 175 35% 45%;
+    --jade-light: 175 30% 55%;
+    --jade-dark: 175 40% 35%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Rich Maroon - Luxury & Tradition */
+    --maroon: 0 100% 25%;
+    --maroon-light: 0 85% 35%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Neutral tones */
+    --cream: 45 20% 97%;
+    --beige: 45 15% 90%;
+    --beige-dark: 45 12% 80%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Semantic color mappings */
+    --primary: var(--sapphire);
+    --primary-foreground: var(--cream);
+    --primary-light: var(--sapphire-light);
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --secondary: var(--jade);
+    --secondary-foreground: var(--cream);
+    --secondary-light: var(--jade-light);
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --accent: var(--golden);
+    --accent-foreground: var(--sapphire);
+    --accent-light: var(--golden-light);
 
-    --radius: 0.5rem;
+    --card: var(--cream);
+    --card-foreground: var(--foreground);
+
+    --muted: var(--beige);
+    --muted-foreground: 210 25% 45%;
+
+    --border: var(--beige-dark);
+    --input: var(--beige);
+    --ring: var(--golden);
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: var(--cream);
+
+    /* Islamic geometric gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--sapphire)), hsl(var(--sapphire-light)));
+    --gradient-golden: linear-gradient(135deg, hsl(var(--golden)), hsl(var(--golden-light)));
+    --gradient-jade: linear-gradient(135deg, hsl(var(--jade)), hsl(var(--jade-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--sapphire)) 0%, hsl(var(--jade)) 100%);
+
+    /* Sacred shadows */
+    --shadow-gentle: 0 4px 20px hsl(var(--sapphire) / 0.1);
+    --shadow-elevated: 0 8px 30px hsl(var(--sapphire) / 0.15);
+    --shadow-golden: 0 4px 20px hsl(var(--golden) / 0.2);
+
+    /* Smooth transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-gentle: all 0.2s ease-out;
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
