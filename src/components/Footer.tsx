@@ -20,7 +20,7 @@ const Footer = () => {
               </div>
               <div>
                 <h3 className="font-display font-bold text-xl">Insha</h3>
-                <p className="text-sm text-cream font-body">Hajj Umrah Agency</p>
+                <p className="text-sm text-white font-body">Hajj Umrah Agency</p>
               </div>
             </div>
             
@@ -29,14 +29,14 @@ const Footer = () => {
               <div className="space-y-3 text-sm">
                 <div className="flex items-start space-x-3">
                   <MapPin className="w-4 h-4 text-jade flex-shrink-0 mt-0.5" />
-                  <span className="text-cream/90 font-body">
+                  <span className="text-white font-body">
                     The Forecastle, Suite No. 4/A, 3rd Floor, Road 23/B<br />
                     Gulshan 01, Dhaka 1212, Bangladesh
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="w-4 h-4 text-jade" />
-                  <span className="text-cream/90 font-body">01713-155200</span>
+                  <span className="text-white font-body">01713-155200</span>
                 </div>
               </div>
             </div>
@@ -46,19 +46,19 @@ const Footer = () => {
           <div className="space-y-6">
             <h4 className="font-body font-semibold text-golden">About Us</h4>
             <nav className="space-y-3">
-              <a href="/management-board" className="block text-cream/80 hover:text-golden transition-colors font-body text-sm">
+              <a href="/management-board" className="block text-white hover:text-golden transition-colors font-body text-sm">
                 Management Board
               </a>
-              <a href="/shariah-consultant" className="block text-cream/80 hover:text-golden transition-colors font-body text-sm">
+              <a href="/shariah-consultant" className="block text-white hover:text-golden transition-colors font-body text-sm">
                 Shariah Consultant
               </a>
-              <a href="/umrah-guide" className="block text-cream/80 hover:text-golden transition-colors font-body text-sm">
+              <a href="/umrah-guide" className="block text-white hover:text-golden transition-colors font-body text-sm">
                 Umrah Guide
               </a>
-              <a href="/testimonials" className="block text-cream/80 hover:text-golden transition-colors font-body text-sm">
+              <a href="/testimonials" className="block text-white hover:text-golden transition-colors font-body text-sm">
                 Client Testimonials
               </a>
-              <a href="/location" className="block text-cream/80 hover:text-golden transition-colors font-body text-sm">
+              <a href="/location" className="block text-white hover:text-golden transition-colors font-body text-sm">
                 Hours and Location
               </a>
             </nav>
@@ -68,10 +68,10 @@ const Footer = () => {
           <div className="space-y-6">
             <h4 className="font-body font-semibold text-golden">Guidance</h4>
             <nav className="space-y-3">
-              <a href="/umrah-guideline-english" className="block text-cream/80 hover:text-golden transition-colors font-body text-sm">
+              <a href="/umrah-guideline-english" className="block text-white hover:text-golden transition-colors font-body text-sm">
                 Umrah Guideline English
               </a>
-              <a href="/umrah-guideline-bangla" className="block text-cream/80 hover:text-golden transition-colors font-body text-sm">
+              <a href="/umrah-guideline-bangla" className="block text-white hover:text-golden transition-colors font-body text-sm">
                 Umrah Guideline Bangla
               </a>
             </nav>
@@ -81,19 +81,19 @@ const Footer = () => {
           <div className="space-y-6">
             <h4 className="font-body font-semibold text-golden">Facilities</h4>
             <nav className="space-y-3">
-              <a href="/visa-processing" className="block text-cream/80 hover:text-golden transition-colors font-body text-sm">
+              <a href="/visa-processing" className="block text-white hover:text-golden transition-colors font-body text-sm">
                 Visa Processing
               </a>
-              <a href="/hotel-booking" className="block text-cream/80 hover:text-golden transition-colors font-body text-sm">
+              <a href="/hotel-booking" className="block text-white hover:text-golden transition-colors font-body text-sm">
                 Hotel Booking
               </a>
-              <a href="/ziyarat-tours" className="block text-cream/80 hover:text-golden transition-colors font-body text-sm">
+              <a href="/ziyarat-tours" className="block text-white hover:text-golden transition-colors font-body text-sm">
                 Ziyarat Tours
               </a>
-              <a href="/airline-ticketing" className="block text-cream/80 hover:text-golden transition-colors font-body text-sm">
+              <a href="/airline-ticketing" className="block text-white hover:text-golden transition-colors font-body text-sm">
                 Airline Ticketing
               </a>
-              <a href="/umrah-training" className="block text-cream/80 hover:text-golden transition-colors font-body text-sm">
+              <a href="/umrah-training" className="block text-white hover:text-golden transition-colors font-body text-sm">
                 Umrah Training
               </a>
             </nav>
@@ -123,23 +123,23 @@ const Footer = () => {
             </div>
 
             {/* Copyright */}
-            <div className="text-center text-sm text-cream/60 font-body">
+            <div className="text-center text-sm text-white/80 font-body">
               <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4">
                 <div>
-                  <a href="/about" className="hover:text-golden transition-colors">About Us</a>
-                  <span className="mx-2">|</span>
-                  <a href="/privacy" className="hover:text-golden transition-colors">Privacy Policy</a>
-                  <span className="mx-2">|</span>
-                  <a href="/contact" className="hover:text-golden transition-colors">Contact Us</a>
-                  <span className="mx-2">|</span>
-                  <a href="/sitemap" className="hover:text-golden transition-colors">Sitemap</a>
+                  <a href="/about" className="hover:text-golden transition-colors text-white">About Us</a>
+                  <span className="mx-2 text-white">|</span>
+                  <a href="/privacy" className="hover:text-golden transition-colors text-white">Privacy Policy</a>
+                  <span className="mx-2 text-white">|</span>
+                  <a href="/contact" className="hover:text-golden transition-colors text-white">Contact Us</a>
+                  <span className="mx-2 text-white">|</span>
+                  <a href="/sitemap" className="hover:text-golden transition-colors text-white">Sitemap</a>
                 </div>
-                <div>
-                  Copyright © 2025 Hijaz Hajj Umrah Ltd. | All rights reserved.
+                <div className="text-white">
+                  Copyright © 2025 Insha Hajj Umrah Agency Ltd. | All rights reserved.
                 </div>
               </div>
               <div className="mt-2">
-                Designed & Developed by{' '}
+                <span className="text-white">Designed & Developed by{' '}</span>
                 <a 
                   href="https://infrastations.github.io/" 
                   className="text-golden hover:text-golden-light transition-colors"

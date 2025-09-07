@@ -23,7 +23,7 @@ const Hero = () => {
                 <span className="block text-golden">Bangladesh</span>
               </h1>
               
-              <p className="text-xl lg:text-2xl text-cream/90 font-body leading-relaxed">
+              <p className="text-xl lg:text-2xl text-white font-body leading-relaxed">
                 Discover all the amazing packages at exclusive rates with expert guides and Sharia consultants.
               </p>
             </div>
