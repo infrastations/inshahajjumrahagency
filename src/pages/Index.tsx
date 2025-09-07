@@ -155,7 +155,7 @@ const Index = () => {
             <h2 className="font-display text-4xl font-bold text-golden mb-6">
               Popular Hajj Packages 2026
             </h2>
-            <p className="font-body text-xl text-foreground/90 max-w-4xl mx-auto leading-relaxed">
+            <p className="font-body text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
               Our popular Hajj packages for 2026 have been meticulously crafted to ensure a seamless and memorable journey. We 
               prioritize our member's comfort, safety, and well-being throughout their Hajj pilgrimage, providing a worry-free experience.
             </p>
@@ -191,8 +191,8 @@ const Index = () => {
             <h2 className="font-display text-4xl font-bold text-golden mb-6">
               Key Highlights: Insha Hajj Umrah Agency
             </h2>
-            <p className="font-body text-xl text-muted-foreground max-w-4xl mx-auto">
-              With a steadfast commitment to <span className="text-sapphire font-semibold">excellence</span>, 
+            <p className="font-body text-xl text-white/80 max-w-4xl mx-auto">
+              With a steadfast commitment to <span className="text-[#D4AF37] font-semibold">excellence</span>, 
               Insha Hajj Umrah Agency has achieved remarkable milestones in serving the pilgrims' community.
             </p>
           </div>
@@ -206,8 +206,8 @@ const Index = () => {
                   {index === 2 && <Star className="w-8 h-8 text-sapphire mr-4" />}
                   <span className="font-display text-5xl font-bold text-sapphire">{highlight.number}</span>
                 </div>
-                <h3 className="font-body text-xl font-semibold text-sapphire mb-2">{highlight.title}</h3>
-                <p className="font-body text-muted-foreground">{highlight.subtitle}</p>
+                <h3 className="font-body text-xl font-semibold text-white mb-2">{highlight.title}</h3>
+                <p className="font-body text-white/70">{highlight.subtitle}</p>
               </div>
             ))}
           </div>
@@ -222,8 +222,8 @@ const Index = () => {
               <h2 className="font-display text-4xl font-bold text-golden mb-6">
                 Our distinguished Shariah consultants
               </h2>
-              <p className="font-body text-lg text-muted-foreground max-w-2xl">
-                Our <span className="text-jade font-semibold">Shariah consultants</span> are esteemed scholars well-versed in the teachings of Islam and possess a deep knowledge of the 
+              <p className="font-body text-lg text-white/80 max-w-2xl">
+                Our <span className="text-[#D4AF37] font-semibold">Shariah consultants</span> are esteemed scholars well-versed in the teachings of Islam and possess a deep knowledge of the 
                 Hajj and Umrah rituals.
               </p>
             </div>
@@ -289,8 +289,8 @@ const Index = () => {
               <h2 className="font-display text-4xl font-bold text-golden mb-8">
                 Video tutorials on Umrah journey
               </h2>
-              <p className="font-body text-lg text-muted-foreground leading-relaxed mb-8">
-                We offer <span className="text-sapphire font-semibold">informative and engaging video tutorials</span> that serve as a valuable resource in 
+              <p className="font-body text-lg text-white/80 leading-relaxed mb-8">
+                We offer <span className="text-[#D4AF37] font-semibold">informative and engaging video tutorials</span> that serve as a valuable resource in 
                 preparing for this sacred pilgrimage.
               </p>
               <Button className="bg-golden hover:bg-golden-dark text-sapphire font-body font-semibold">
@@ -399,21 +399,24 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="bg-white rounded-2xl p-8 shadow-elevated">
-              <h2 className="font-display text-3xl font-bold text-golden mb-6">
+              <h2 className="font-display text-3xl font-bold text-[#D4AF37] mb-6">
                 Insha Service Area
               </h2>
-              <p className="font-body text-muted-foreground leading-relaxed mb-8">
+              <p className="font-body text-lg text-gray-600 mb-8">
                 Find your nearby Hajj & Umrah agency associated with Insha Hajj Umrah Agency Bangladesh. 
                 Identify the trusted Umrah agents in your area and get in touch with them to facilitate 
                 your next holy journey to Makkah and Madina.
               </p>
 
-              <ScrollArea className="h-64 mb-8">
-                <div className="grid grid-cols-2 gap-4 pr-4">
+              <ScrollArea className="h-80 pr-4">
+                <div className="grid grid-cols-2 gap-3">
                   {serviceAreas.map((area, index) => (
-                    <div key={index} className="flex items-center space-x-2">
-                      <MapPin className="w-4 h-4 text-jade" />
-                      <span className="font-body text-sm text-foreground">{area}</span>
+                    <div 
+                      key={index} 
+                      className="flex items-center space-x-2 p-2 hover:bg-gray-50 rounded-lg transition-colors cursor-pointer"
+                    >
+                      <MapPin className="w-4 h-4 text-[#5C8D89] flex-shrink-0" />
+                      <span className="font-body text-sm text-gray-700">{area}</span>
                     </div>
                   ))}
                 </div>
@@ -421,58 +424,23 @@ const Index = () => {
             </div>
 
             <div className="relative">
-              <div 
-                className="h-96 bg-cover bg-center rounded-2xl relative overflow-hidden"
-                style={{ 
-                  backgroundImage: "url('https://images.unsplash.com/photo-1519302959554-a75be0afc82a?w=600&h=400&fit=crop')",
-                  backgroundColor: '#5C8D89'
-                }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-t from-sapphire/60 to-transparent"></div>
-                
-                {/* Map visualization overlay */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative w-full h-full">
-                    {/* Dhaka marker */}
-                    <div className="absolute bottom-24 right-16">
-                      <div className="w-8 h-8 bg-golden rounded-full flex items-center justify-center shadow-lg animate-pulse">
-                        <MapPin className="w-4 h-4 text-sapphire" />
-                      </div>
-                      <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-white/90 px-2 py-1 rounded text-xs font-semibold text-sapphire">
-                        DHAKA
-                      </div>
-                    </div>
-                    
-                    {/* Flight path */}
-                    <div className="absolute bottom-24 right-16 w-32 h-px bg-golden/60 transform -rotate-45 origin-left">
-                      <div className="absolute -top-2 -right-2">
-                        <Plane className="w-4 h-4 text-golden animate-pulse" />
-                      </div>
-                    </div>
-                    
-                    {/* Mecca marker */}
-                    <div className="absolute top-16 left-20">
-                      <div className="w-8 h-8 bg-golden rounded-full flex items-center justify-center shadow-lg animate-pulse">
-                        <div className="w-3 h-3 bg-sapphire rounded-full"></div>
-                      </div>
-                      <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-white/90 px-2 py-1 rounded text-xs font-semibold text-sapphire">
-                        MECCA
-                      </div>
-                    </div>
+              <div className="bg-gradient-to-br from-[#2C5F73] to-[#5C8D89] rounded-2xl p-8 h-96 flex flex-col items-center justify-center text-white">
+                <div className="text-center mb-6">
+                  <div className="w-20 h-20 bg-[#D4AF37] rounded-full flex items-center justify-center mb-4 mx-auto">
+                    <span className="text-[#0D2F4B] font-bold text-sm">MECCA</span>
+                  </div>
+                  <div className="w-1 h-20 bg-[#D4AF37] mx-auto mb-4"></div>
+                  <div className="w-16 h-16 bg-[#D4AF37] rounded-full flex items-center justify-center mx-auto">
+                    <span className="text-[#0D2F4B] font-bold text-xs">DHAKA</span>
                   </div>
                 </div>
-
-                <div className="absolute bottom-8 left-8 right-8">
-                  <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20">
-                    <div className="flex items-center justify-between text-white">
-                      <span className="font-body font-semibold">BANGLADESH</span>
-                      <div className="flex items-center space-x-2">
-                        <div className="w-6 h-6 bg-golden rounded-full flex items-center justify-center">
-                          <Plane className="w-3 h-3 text-sapphire" />
-                        </div>
-                        <span className="font-body">SAUDI ARABIA</span>
-                      </div>
-                    </div>
+                <div className="bg-[#0D2F4B]/90 px-6 py-3 rounded-full">
+                  <div className="flex items-center space-x-4">
+                    <span className="text-white font-semibold">BANGLADESH</span>
+                    <div className="w-8 h-px bg-[#D4AF37]"></div>
+                    <Plane className="w-5 h-5 text-[#D4AF37]" />
+                    <div className="w-8 h-px bg-[#D4AF37]"></div>
+                    <span className="text-white font-semibold">SAUDI ARABIA</span>
                   </div>
                 </div>
               </div>

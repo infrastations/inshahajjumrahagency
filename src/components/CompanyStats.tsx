@@ -3,10 +3,10 @@ import { Users, Calendar, Award, Shield } from 'lucide-react';
 
 const CompanyStats = () => {
   return (
-    <section className="py-16 bg-jade">
+    <section className="py-16 bg-gradient-to-br from-[#5C8D89] to-[#4A7B7E]">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 space-y-6 border border-white/20">
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 space-y-6 border border-white/20 shadow-2xl">
             <div className="text-center mb-8">
               <h3 className="font-display text-3xl font-semibold text-white mb-4">
                 Insha Hajj Umrah Agency
