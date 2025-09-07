@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Users, MapPin, Clock, Plane, Star, PlayCircle, Map, Phone } from 'lucide-react';
 import muslimScholar1 from '@/assets/muslim-scholar-1.jpg';
 import muslimScholar2 from '@/assets/muslim-scholar-2.jpg';
@@ -411,13 +412,14 @@ const Index = () => {
               <ScrollArea className="h-80 pr-4">
                 <div className="grid grid-cols-2 gap-3">
                   {serviceAreas.map((area, index) => (
-                    <div 
-                      key={index} 
+                    <Link
+                      key={index}
+                      to={`/service-area/${area.toLowerCase()}`}
                       className="flex items-center space-x-2 p-2 hover:bg-gray-50 rounded-lg transition-colors cursor-pointer"
                     >
                       <MapPin className="w-4 h-4 text-[#5C8D89] flex-shrink-0" />
                       <span className="font-body text-sm text-gray-700">{area}</span>
-                    </div>
+                    </Link>
                   ))}
                 </div>
               </ScrollArea>
