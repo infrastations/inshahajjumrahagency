@@ -94,12 +94,14 @@ const ServiceAreaDetails = () => {
                 <p className="font-body text-white/80 mb-8 leading-relaxed">
                   We have a great deal of experience and knowledge in this field. We have already led and helped many pilgrims from {displayDistrict} complete their Umrah. We've earned acknowledgment from the city for our outstanding services. If you prepare for Umrah, don't worry. Contact us and comfortably complete your Umrah.
                 </p>
-                <Button 
-                  size="lg"
-                  className="bg-golden hover:bg-golden-dark text-sapphire font-body font-semibold"
-                >
-                  Schedule a Meeting!
-                </Button>
+                <Link to="/about-us/contact-us">
+                  <Button 
+                    size="lg"
+                    className="bg-golden hover:bg-golden-dark text-sapphire font-body font-semibold"
+                  >
+                    Schedule a Meeting!
+                  </Button>
+                </Link>
             </div>
             <div className="relative">
               <div className="bg-white rounded-2xl p-4 shadow-elevated">
@@ -363,12 +365,14 @@ const ServiceAreaDetails = () => {
           <p className="font-body text-white mb-8">
             Visit our office for more details and to begin your Hajj preparations with us. Don't miss this opportunity.
           </p>
-          <Button 
-            size="lg"
-            className="bg-golden hover:bg-golden-dark text-sapphire font-body font-semibold"
-          >
-            Register now!
-          </Button>
+          <Link to="/about-us/contact-us">
+            <Button 
+              size="lg"
+              className="bg-golden hover:bg-golden-dark text-sapphire font-body font-semibold"
+            >
+              Register now!
+            </Button>
+          </Link>
         </div>
       </section>
 
@@ -483,12 +487,14 @@ const ServiceAreaDetails = () => {
                     <p className="font-body text-gray-600 mb-6">
                       Book a consultation with our {displayDistrict} team today
                     </p>
-                    <Button 
-                      size="lg"
-                      className="bg-golden hover:bg-golden-dark text-sapphire font-body font-semibold"
-                    >
-                      Schedule Consultation
-                    </Button>
+                    <Link to="/about-us/contact-us">
+                      <Button 
+                        size="lg"
+                        className="bg-golden hover:bg-golden-dark text-sapphire font-body font-semibold"
+                      >
+                        Schedule Consultation
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </CardContent>

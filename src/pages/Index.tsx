@@ -268,12 +268,14 @@ const Index = () => {
             Allow us to offer you a personalized Umrah experience tailored to your travel dates, 
             budget, and hotel preferences.
           </p>
-          <Button 
-            size="lg"
-            className="bg-golden hover:bg-golden-dark text-sapphire font-body font-semibold px-8 py-6 text-lg"
-          >
-            Start Customization
-          </Button>
+          <Link to="/about-us/contact-us">
+            <Button 
+              size="lg"
+              className="bg-golden hover:bg-golden-dark text-sapphire font-body font-semibold px-8 py-6 text-lg"
+            >
+              Start Customization
+            </Button>
+          </Link>
         </div>
       </section>
 
@@ -457,12 +459,14 @@ const Index = () => {
           <h2 className="font-display text-4xl font-bold text-golden mb-8">
             Apply for an Umrah visa and experience the hassle-free journey to the city of Makkah.
           </h2>
-          <Button 
-            size="lg"
-            className="bg-golden hover:bg-golden-dark text-sapphire font-body font-semibold px-8 py-6 text-lg"
-          >
-            Request for Umrah Booking Online
-          </Button>
+          <Link to="/about-us/contact-us">
+            <Button 
+              size="lg"
+              className="bg-golden hover:bg-golden-dark text-sapphire font-body font-semibold px-8 py-6 text-lg"
+            >
+              Request for Umrah Booking Online
+            </Button>
+          </Link>
         </div>
       </section>
 
