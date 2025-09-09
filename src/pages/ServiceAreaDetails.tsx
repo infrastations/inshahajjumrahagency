@@ -73,33 +73,33 @@ const ServiceAreaDetails = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-cream">
+      <section className="pt-24 pb-16 bg-background">
         <div className="container mx-auto px-4">
-          <Link 
-            to="/" 
-            className="inline-flex items-center text-sapphire hover:text-golden transition-colors mb-8"
-          >
-            <ArrowLeft className="w-5 h-5 mr-2" />
-            Back to Home
-          </Link>
-          
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="font-display text-5xl font-bold text-sapphire mb-6">
-                Best Umrah Hajj agency in {displayDistrict}, Bangladesh
-              </h1>
-              <p className="font-body text-lg text-sapphire/80 mb-6 leading-relaxed">
-                Hijaz Hajj Umrah Ltd. is the best Umrah Hajj agency in {displayDistrict}, Bangladesh. We provide exceptional Umrah Hajj Packages (2025-2026) from {displayDistrict}, Bangladesh, for those who would like to complete Umrah correctly and efficiently from this area. We also offer pilgrims <span className="text-jade font-semibold">services</span> relating to <span className="text-jade font-semibold">Umrah</span>, including arranging for a <span className="text-jade font-semibold">visa</span>, <span className="text-jade font-semibold">booking accommodation</span>, help with <span className="text-jade font-semibold">transportation</span>, and <span className="text-jade font-semibold">guidance</span> during the journey.
-              </p>
-              <p className="font-body text-sapphire/80 mb-8 leading-relaxed">
-                We have a great deal of experience and knowledge in this field. We have already led and helped many pilgrims from {displayDistrict} complete their Umrah. We've earned acknowledgment from the city for our outstanding services. If you prepare for Umrah, don't worry. Contact us and comfortably complete your Umrah.
-              </p>
-              <Button 
-                size="lg"
-                className="bg-golden hover:bg-golden-dark text-sapphire font-body font-semibold"
-              >
-                Schedule a Meeting!
-              </Button>
+            <Link 
+              to="/" 
+              className="inline-flex items-center text-white hover:text-golden transition-colors mb-8"
+            >
+              <ArrowLeft className="w-5 h-5 mr-2" />
+              Back to Home
+            </Link>
+            
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h1 className="font-display text-5xl font-bold text-white mb-6">
+                  Best Umrah Hajj agency in {displayDistrict}, Bangladesh
+                </h1>
+                <p className="font-body text-lg text-white/80 mb-6 leading-relaxed">
+                  Hijaz Hajj Umrah Ltd. is the best Umrah Hajj agency in {displayDistrict}, Bangladesh. We provide exceptional Umrah Hajj Packages (2025-2026) from {displayDistrict}, Bangladesh, for those who would like to complete Umrah correctly and efficiently from this area. We also offer pilgrims <span className="text-golden font-semibold">services</span> relating to <span className="text-golden font-semibold">Umrah</span>, including arranging for a <span className="text-golden font-semibold">visa</span>, <span className="text-golden font-semibold">booking accommodation</span>, help with <span className="text-golden font-semibold">transportation</span>, and <span className="text-golden font-semibold">guidance</span> during the journey.
+                </p>
+                <p className="font-body text-white/80 mb-8 leading-relaxed">
+                  We have a great deal of experience and knowledge in this field. We have already led and helped many pilgrims from {displayDistrict} complete their Umrah. We've earned acknowledgment from the city for our outstanding services. If you prepare for Umrah, don't worry. Contact us and comfortably complete your Umrah.
+                </p>
+                <Button 
+                  size="lg"
+                  className="bg-golden hover:bg-golden-dark text-sapphire font-body font-semibold"
+                >
+                  Schedule a Meeting!
+                </Button>
             </div>
             <div className="relative">
               <div className="bg-white rounded-2xl p-4 shadow-elevated">
@@ -120,7 +120,7 @@ const ServiceAreaDetails = () => {
       </section>
 
       {/* Available Packages Section */}
-      <section className="py-16 bg-cream">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <div className="flex items-center justify-center mb-6">
@@ -132,10 +132,10 @@ const ServiceAreaDetails = () => {
               </div>
               <div className="w-16 h-1 bg-golden"></div>
             </div>
-            <h2 className="font-display text-4xl font-bold text-sapphire mb-4">
+            <h2 className="font-display text-4xl font-bold text-white mb-4">
               Available Umrah Packages from {displayDistrict}
             </h2>
-            <p className="font-body text-lg text-sapphire/80 max-w-3xl mx-auto">
+            <p className="font-body text-lg text-white/80 max-w-3xl mx-auto">
               Plan your Umrah and Ziyarah. Our upcoming Umrah packages will encompass a range of options, including economy and premium packages, designed to accommodate various budgets and preferences.
             </p>
           </div>
@@ -149,16 +149,16 @@ const ServiceAreaDetails = () => {
       </section>
 
       {/* Budget-friendly Packages Section */}
-      <section className="py-16 bg-cream">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="font-display text-4xl font-bold text-sapphire mb-8 text-center">
+            <h2 className="font-display text-4xl font-bold text-white mb-8 text-center">
               Budget-friendly Umrah Packages 2025 of Hijaz Hajj Umrah Ltd. from {displayDistrict} City
             </h2>
-            <p className="font-body text-lg text-sapphire/80 mb-6 leading-relaxed">
+            <p className="font-body text-lg text-white/80 mb-6 leading-relaxed">
               Hijaz Hajj Umrah Ltd. renowned for its commitment to providing affordable and comprehensive pilgrimage experiences, offers budget-friendly Umrah packages customized specifically for pilgrims from {displayDistrict} City, with a focus on ensuring a smooth spiritual journey. These packages cover all essential aspects including transportation, accommodation, and guided tours, enabling pilgrims to fulfill their spiritual obligations without financial strain.
             </p>
-            <p className="font-body text-lg text-sapphire/80 mb-8 leading-relaxed">
+            <p className="font-body text-lg text-white/80 mb-8 leading-relaxed">
               With careful attention to detail and a dedication to customer satisfaction, Hijaz Hajj Umrah Ltd. stands as a trusted choice for those seeking a fulfilling Umrah experience from {displayDistrict} City without compromising on quality or affordability.
             </p>
             <div className="text-center">
@@ -174,13 +174,13 @@ const ServiceAreaDetails = () => {
       </section>
 
       {/* Overview Section */}
-      <section className="py-16 bg-cream">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="font-display text-4xl font-bold text-sapphire mb-8">
+            <h2 className="font-display text-4xl font-bold text-white mb-8">
               Overview of {displayDistrict}
             </h2>
-            <p className="font-body text-lg text-sapphire/80 leading-relaxed">
+            <p className="font-body text-lg text-white/80 leading-relaxed">
               {displayDistrict} holds significant importance in Islamic heritage. The district is home to many historic mosques and Islamic sites, attracting devotees from across the region. Notable among them is the Shrine of Hazrat Kazi Quamrul Islam, a revered Sufi saint, which serves as a spiritual center for Muslims. Various mosques, both old and new, are scattered throughout the area, reflecting the district's deep-rooted Islamic traditions. {displayDistrict}'s religious landscape emphasizes its devotion to Islamic teachings and practices, making it a key spiritual hub in Bangladesh.
             </p>
           </div>
@@ -188,11 +188,11 @@ const ServiceAreaDetails = () => {
       </section>
 
       {/* Visa Requirements Section */}
-      <section className="py-16 bg-cream">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
-              <div className="bg-white rounded-2xl p-8 shadow-elevated border-4 border-sapphire/20">
+              <div className="bg-white rounded-2xl p-8 shadow-elevated border-4 border-white/20">
                 <div 
                   className="h-64 bg-cover bg-center rounded-lg"
                   style={{ backgroundImage: "url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400&h=300&fit=crop')" }}
@@ -200,11 +200,11 @@ const ServiceAreaDetails = () => {
               </div>
             </div>
             <div>
-              <h2 className="font-display text-4xl font-bold text-sapphire mb-6">
+              <h2 className="font-display text-4xl font-bold text-white mb-6">
                 Umrah Hajj visa requirements for citizens of {displayDistrict}, Bangladesh
               </h2>
-              <p className="font-body text-lg text-sapphire/80 mb-6 leading-relaxed">
-                Citizens of {displayDistrict}, Bangladesh <span className="text-jade font-semibold">planning to undertake the holy pilgrimage of Umrah</span> to Makkah must fulfill specific visa requirements. These requirements typically include:
+              <p className="font-body text-lg text-white/80 mb-6 leading-relaxed">
+                Citizens of {displayDistrict}, Bangladesh <span className="text-golden font-semibold">planning to undertake the holy pilgrimage of Umrah</span> to Makkah must fulfill specific visa requirements. These requirements typically include:
               </p>
               <div className="space-y-3 mb-8">
                 {[
@@ -216,8 +216,8 @@ const ServiceAreaDetails = () => {
                   "NID card/birth certificate"
                 ].map((requirement, index) => (
                   <div key={index} className="flex items-start">
-                    <CheckCircle className="w-5 h-5 text-jade mr-3 mt-0.5 flex-shrink-0" />
-                    <span className="font-body text-sapphire/80">{requirement}</span>
+                    <CheckCircle className="w-5 h-5 text-golden mr-3 mt-0.5 flex-shrink-0" />
+                    <span className="font-body text-white/80">{requirement}</span>
                   </div>
                 ))}
               </div>
@@ -233,55 +233,55 @@ const ServiceAreaDetails = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-16 bg-cream">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="font-display text-4xl font-bold text-sapphire mb-8">
+            <h2 className="font-display text-4xl font-bold text-white mb-8">
               Why is Hijaz Hajj Umrah Ltd. your best choice for performing Umrah from {displayDistrict}?
             </h2>
-            <p className="font-body text-lg text-sapphire/80 mb-12 leading-relaxed">
-              Hijaz Hajj Umrah Ltd. provides high-standard Umrah-related <span className="text-jade font-semibold">services</span> to pilgrims from {displayDistrict}, fulfilling promises and offering a pure Umrah <span className="text-jade font-semibold">experience</span> at an affordable cost. This is why pilgrims from {displayDistrict} prefer us. Below are some more reasons to choose us:
+            <p className="font-body text-lg text-white/80 mb-12 leading-relaxed">
+              Hijaz Hajj Umrah Ltd. provides high-standard Umrah-related <span className="text-golden font-semibold">services</span> to pilgrims from {displayDistrict}, fulfilling promises and offering a pure Umrah <span className="text-golden font-semibold">experience</span> at an affordable cost. This is why pilgrims from {displayDistrict} prefer us. Below are some more reasons to choose us:
             </p>
 
             <div className="space-y-12">
               <div>
-                <h3 className="font-display text-2xl font-bold text-sapphire mb-4">Local expertise</h3>
-                <p className="font-body text-sapphire/80 leading-relaxed">
+                <h3 className="font-display text-2xl font-bold text-white mb-4">Local expertise</h3>
+                <p className="font-body text-white/80 leading-relaxed">
                   Hijaz Hajj Umrah Ltd. understand the unique needs and preferences of travelers from {displayDistrict}, offering customized services that are specific to this area.
                 </p>
               </div>
 
               <div>
-                <h3 className="font-display text-2xl font-bold text-sapphire mb-4">Personalized assistance</h3>
-                <p className="font-body text-sapphire/80 leading-relaxed">
-                  With a dedicated team fluent in the language and familiar with the culture of {displayDistrict}, travelers receive personalized assistance and support at every step of their <span className="text-jade font-semibold">Umrah journey</span>.
+                <h3 className="font-display text-2xl font-bold text-white mb-4">Personalized assistance</h3>
+                <p className="font-body text-white/80 leading-relaxed">
+                  With a dedicated team fluent in the language and familiar with the culture of {displayDistrict}, travelers receive personalized assistance and support at every step of their <span className="text-golden font-semibold">Umrah journey</span>.
                 </p>
               </div>
 
               <div>
-                <h3 className="font-display text-2xl font-bold text-sapphire mb-4">Convenience</h3>
-                <p className="font-body text-sapphire/80 leading-relaxed">
+                <h3 className="font-display text-2xl font-bold text-white mb-4">Convenience</h3>
+                <p className="font-body text-white/80 leading-relaxed">
                   Hijaz Hajj Umrah Ltd. optimize the entire process, from visa arrangements to accommodation and transportation, ensuring a hassle-free experience for pilgrims from {displayDistrict}.
                 </p>
               </div>
 
               <div>
-                <h3 className="font-display text-2xl font-bold text-sapphire mb-4">Trusted reputation</h3>
-                <p className="font-body text-sapphire/80 leading-relaxed">
+                <h3 className="font-display text-2xl font-bold text-white mb-4">Trusted reputation</h3>
+                <p className="font-body text-white/80 leading-relaxed">
                   Known for their reliability and integrity, Hijaz Hajj Umrah Ltd. has built a trusted reputation within {displayDistrict} City, providing peace of mind to travelers seeking a reputable Umrah service provider.
                 </p>
               </div>
 
               <div>
-                <h3 className="font-display text-2xl font-bold text-sapphire mb-4">Affordable packages</h3>
-                <p className="font-body text-sapphire/80 leading-relaxed">
+                <h3 className="font-display text-2xl font-bold text-white mb-4">Affordable packages</h3>
+                <p className="font-body text-white/80 leading-relaxed">
                   Offering competitive pricing without compromising on quality, Hijaz Hajj Umrah Ltd. presents affordable Umrah packages designed to suit the financial limitations of pilgrims from {displayDistrict}.
                 </p>
               </div>
 
               <div>
-                <h3 className="font-display text-2xl font-bold text-sapphire mb-4">Customer satisfaction</h3>
-                <p className="font-body text-sapphire/80 leading-relaxed">
+                <h3 className="font-display text-2xl font-bold text-white mb-4">Customer satisfaction</h3>
+                <p className="font-body text-white/80 leading-relaxed">
                   With a commitment to exceeding customer expectations, Hijaz Hajj Umrah Ltd. prioritizes customer satisfaction, ensuring that every pilgrim from the {displayDistrict} district returns home with valued memories of their Umrah journey.
                 </p>
               </div>
@@ -291,55 +291,55 @@ const ServiceAreaDetails = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="font-display text-4xl font-bold text-sapphire mb-12 text-center">
+            <h2 className="font-display text-4xl font-bold text-white mb-12 text-center">
               Frequently asked questions and answers
             </h2>
             
             <Accordion type="single" collapsible className="space-y-4">
-              <AccordionItem value="item-1" className="border border-sapphire/20 rounded-lg px-6">
-                <AccordionTrigger className="font-body text-lg font-semibold text-sapphire hover:no-underline">
+              <AccordionItem value="item-1" className="border border-white/20 rounded-lg px-6">
+                <AccordionTrigger className="font-body text-lg font-semibold text-white hover:no-underline">
                   What types of Hajj and Umrah packages do you offer in {displayDistrict}?
                 </AccordionTrigger>
-                <AccordionContent className="font-body text-sapphire/80 pb-4">
+                <AccordionContent className="font-body text-white/80 pb-4">
                   We offer a variety of Hajj and Umrah packages customized to meet different needs and budgets. These include economy, standard, and premium packages that cover transportation, accommodation, visa processing, and guided tours of holy sites.
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="item-2" className="border border-sapphire/20 rounded-lg px-6">
-                <AccordionTrigger className="font-body text-lg font-semibold text-sapphire hover:no-underline">
+              <AccordionItem value="item-2" className="border border-white/20 rounded-lg px-6">
+                <AccordionTrigger className="font-body text-lg font-semibold text-white hover:no-underline">
                   Are your packages customizable?
                 </AccordionTrigger>
-                <AccordionContent className="font-body text-sapphire/80 pb-4">
+                <AccordionContent className="font-body text-white/80 pb-4">
                   Yes, we understand that every pilgrim has unique preferences and requirements. Our packages can be customized based on your travel dates, accommodation preferences, duration of stay, and budget constraints to ensure you have the most suitable experience.
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="item-3" className="border border-sapphire/20 rounded-lg px-6">
-                <AccordionTrigger className="font-body text-lg font-semibold text-sapphire hover:no-underline">
+              <AccordionItem value="item-3" className="border border-white/20 rounded-lg px-6">
+                <AccordionTrigger className="font-body text-lg font-semibold text-white hover:no-underline">
                   What services are included in your Hajj and Umrah packages?
                 </AccordionTrigger>
-                <AccordionContent className="font-body text-sapphire/80 pb-4">
+                <AccordionContent className="font-body text-white/80 pb-4">
                   Our comprehensive packages include visa processing, round-trip flights, accommodation in Makkah and Madinah, local transportation, guided religious tours, 24/7 customer support, and assistance with religious rituals throughout your journey.
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="item-4" className="border border-sapphire/20 rounded-lg px-6">
-                <AccordionTrigger className="font-body text-lg font-semibold text-sapphire hover:no-underline">
+              <AccordionItem value="item-4" className="border border-white/20 rounded-lg px-6">
+                <AccordionTrigger className="font-body text-lg font-semibold text-white hover:no-underline">
                   What documents are required for Hajj and Umrah?
                 </AccordionTrigger>
-                <AccordionContent className="font-body text-sapphire/80 pb-4">
+                <AccordionContent className="font-body text-white/80 pb-4">
                   Required documents include a valid passport with at least 6 months validity, completed visa application forms, recent passport-sized photographs, medical certificates, marriage certificates (for couples), and proof of mahram relationship (for women).
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="item-5" className="border border-sapphire/20 rounded-lg px-6">
-                <AccordionTrigger className="font-body text-lg font-semibold text-sapphire hover:no-underline">
+              <AccordionItem value="item-5" className="border border-white/20 rounded-lg px-6">
+                <AccordionTrigger className="font-body text-lg font-semibold text-white hover:no-underline">
                   Why should I choose Hijaz Hajj Umrah Ltd. for my pilgrimage?
                 </AccordionTrigger>
-                <AccordionContent className="font-body text-sapphire/80 pb-4">
+                <AccordionContent className="font-body text-white/80 pb-4">
                   We offer personalized service with local expertise, competitive pricing, comprehensive packages, experienced guides, 24/7 support, and a proven track record of satisfied customers. Our commitment to excellence ensures your spiritual journey is both memorable and hassle-free.
                 </AccordionContent>
               </AccordionItem>
