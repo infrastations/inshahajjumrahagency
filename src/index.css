@@ -31,10 +31,10 @@
     --maroon: 0 100% 25%;
     --maroon-light: 0 85% 35%;
 
-    /* Neutral tones for dark theme */
-    --cream: 210 45% 20%;
-    --beige: 210 40% 25%;
-    --beige-dark: 210 35% 30%;
+    /* Neutral tones - light colors for contrast */
+    --cream: 45 35% 95%;
+    --beige: 45 25% 90%;
+    --beige-dark: 45 20% 85%;
 
     /* Semantic color mappings */
     --primary: var(--sapphire);
