@@ -24,13 +24,12 @@ const ServiceAreaDetails = () => {
       rating: 5,
       reviews: 109,
       image: "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=400&h=300&fit=crop",
-      features: [
-        "Package 1: 18 Sep-20 Oct (33 Days)",
-        "Hotel Makkah: Standard Hotel | Distance 700-900m", 
-        "Hotel Madinah: Mar'azza in Madinah | Distance 300-400m",
-        "Flights Up: Direct - SV/BG",
-        "Food: Breakfast, Lunch & dinner"
-      ]
+      hotelMakkah: "Standard Hotel | Distance 700-900m",
+      hotelMadinah: "Mar'azza in Madinah | Distance 300-400m",
+      flightsUp: "Direct - SV/BG",
+      flightsDown: "Direct - SV/BG",
+      food: "Breakfast, Lunch & dinner",
+      specialServices: "Ziyara + Guide + Dae + Workshop"
     },
     {
       title: "Economy Umrah Package", 
@@ -41,13 +40,12 @@ const ServiceAreaDetails = () => {
       rating: 5,
       reviews: 107,
       image: "https://images.unsplash.com/photo-1564769625392-651b530c4482?w=400&h=300&fit=crop",
-      features: [
-        "Package 1: 04 Oct-30 Oct (27 Days)",
-        "Hotel Makkah: Hotel Adnan Maluq Al-Omari Equivalent Hotel | Distance 600-700m",
-        "Hotel Madinah: Hotel Rehab (Hotel Share Basis) | Distance 450-750m", 
-        "Flights Up: Direct - SV/BG",
-        "Food: Breakfast, Lunch & dinner"
-      ],
+      hotelMakkah: "Hotel Adnan Maluq Al-Omari Equivalent Hotel | Distance 600-700m",
+      hotelMadinah: "Hotel Rehab (Hotel Share Basis) | Distance 450-750m",
+      flightsUp: "Direct - SV/BG",
+      flightsDown: "Direct - SV/BG", 
+      food: "Breakfast, Lunch & dinner",
+      specialServices: "Ziyara + Guide + Dae + Workshop",
       isPopular: true
     },
     {
@@ -58,13 +56,12 @@ const ServiceAreaDetails = () => {
       rating: 5,
       reviews: 107,
       image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
-      features: [
-        "Package 1: 25 Sep-27 Oct (33 Days)",
-        "Hotel Makkah: Three Star Hotel | Distance 300-400m",
-        "Hotel Madinah: Three Star Hotel | Distance 200-300m",
-        "Flights Up: Direct - SV/BG", 
-        "Food: Breakfast, Lunch & dinner"
-      ]
+      hotelMakkah: "Three Star Hotel | Distance 300-400m",
+      hotelMadinah: "Three Star Hotel | Distance 200-300m",
+      flightsUp: "Direct - SV/BG",
+      flightsDown: "Direct - SV/BG", 
+      food: "Breakfast, Lunch & dinner",
+      specialServices: "Ziyara + Guide + Dae + Workshop"
     }
   ];
 

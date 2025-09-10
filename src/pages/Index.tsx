@@ -18,55 +18,97 @@ import muslimScholar5 from '@/assets/muslim-scholar-5.jpg';
 const Index = () => {
   const packages = [
     {
-      title: "Super Saver Umrah Package",
+      title: "Super Saver - Shifting",
       category: "Super Saver - Shifting",
       price: "৳5,80,000",
       originalPrice: "৳6,30,000",
       duration: "35-40 Days",
-      rating: 5,
+      rating: 4.99,
       reviews: 109,
       image: "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=400&h=300&fit=crop",
-      features: [
-        "Package 1: 18 Sep-20 Oct (33 Days)",
-        "Hotel Makkah: Standard Hotel | Distance 700-900m", 
-        "Hotel Madinah: Mar'azza in Madinah | Distance 300-400m",
-        "Flights Up: Direct - SV/BG",
-        "Food: Breakfast, Lunch & dinner"
-      ]
+      hotelMakkah: "Hotel Ainan Maluq Al-Omari/Equivalent Hotel | Distance 600-700m.",
+      hotelMadinah: "Mar'azza in Madinah/Similar Hotel | Distance 300-400m",
+      flightsUp: "Direct - SV/BG",
+      flightsDown: "Direct - SV/BG",
+      food: "Breakfast, Lunch & dinner",
+      specialServices: "Ziyara + Guide + Dae + Workshop"
     },
     {
-      title: "Economy Umrah Package", 
+      title: "Economy - Non Shifting", 
       category: "Economy - Non Shifting",
       price: "৳6,50,000",
       originalPrice: "৳7,12,500",
       duration: "35-40 Days",
-      rating: 5,
-      reviews: 107,
+      rating: 4.99,
+      reviews: 109,
       image: "https://images.unsplash.com/photo-1564769625392-651b530c4482?w=400&h=300&fit=crop",
-      features: [
-        "Package 1: 04 Oct-30 Oct (27 Days)",
-        "Hotel Makkah: Hotel Adnan Maluq Al-Omari Equivalent Hotel | Distance 600-700m",
-        "Hotel Madinah: Hotel Rehab (Hotel Share Basis) | Distance 450-750m", 
-        "Flights Up: Direct - SV/BG",
-        "Food: Breakfast, Lunch & dinner"
-      ],
+      hotelMakkah: "Hotel Adnan Maluq Al-Omari/Equivalent Hotel | Distance 600-700m.",
+      hotelMadinah: "Mar'azza in Madinah | Distance 300-400m",
+      flightsUp: "Direct - SV/BG",
+      flightsDown: "Direct - SV/BG",
+      food: "Breakfast, Lunch & dinner",
+      specialServices: "Ziyara + Guide + Dae + Workshop",
       isPopular: true
     },
     {
-      title: "Standard Umrah Package",
+      title: "Standard - Non Shifting",
       category: "Standard - Non Shifting", 
-      price: "৳7,50,000",
+      price: "Starts from ৳7,50,000",
       duration: "30-36 Days",
-      rating: 5,
-      reviews: 107,
+      rating: 4.99,
+      reviews: 109,
       image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
-      features: [
-        "Package 1: 25 Sep-27 Oct (33 Days)",
-        "Hotel Makkah: Three Star Hotel | Distance 300-400m",
-        "Hotel Madinah: Three Star Hotel | Distance 200-300m",
-        "Flights Up: Direct - SV/BG", 
-        "Food: Breakfast, Lunch & dinner"
-      ]
+      hotelMakkah: "Three Star Hotel | Distance 300-400m",
+      hotelMadinah: "Three Star Hotel | Distance 200-300m",
+      flightsUp: "Direct - SV/BG",
+      flightsDown: "Direct - SV/BG", 
+      food: "Breakfast, Lunch & dinner",
+      specialServices: "Ziyara + Guide + Dae + Workshop"
+    },
+    {
+      title: "Premium - Shifting",
+      category: "Premium - Shifting", 
+      price: "৳8,50,000",
+      duration: "20-25 Days",
+      rating: 4.99,
+      reviews: 109,
+      image: "https://images.unsplash.com/photo-1542816417-0983c9c9ad53?w=400&h=300&fit=crop",
+      hotelMakkah: "Five Star Hotel | Distance 0-150m.",
+      hotelMadinah: "Five Star Hotel | Distance 0-150m",
+      flightsUp: "Direct - SV/BG",
+      flightsDown: "Direct - SV/BG", 
+      food: "Breakfast, Lunch & dinner",
+      specialServices: "Ziyara + Guide + Dae + Workshop"
+    },
+    {
+      title: "Luxury Non-Shifting",
+      category: "Luxury Non-Shifting", 
+      price: "৳13,50,000",
+      duration: "18-21 Days",
+      rating: 4.99,
+      reviews: 109,
+      image: "https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?w=400&h=300&fit=crop",
+      hotelMakkah: "The Clock Towers | Distance 0m.",
+      hotelMadinah: "Anwar Al Madinah Movenpick/Similar Five star | Distance 0m.",
+      flightsUp: "Direct - SV/BG",
+      flightsDown: "Direct - SV/BG", 
+      food: "Buffet Breakfast, Lunch, Evening Snacks & Dinner",
+      specialServices: "Special Train, Ziyara + Guide + Dae"
+    },
+    {
+      title: "VIP - Non Shifting",
+      category: "VIP - Non Shifting", 
+      price: "৳11,60,000",
+      duration: "18-21 Days",
+      rating: 4.99,
+      reviews: 109,
+      image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=300&fit=crop",
+      hotelMakkah: "Swissotel Al Maqam Makkah/Equivalent Hotel | Distance 0-150m.",
+      hotelMadinah: "Anwar Al Madinah Movenpick/Equivalent Hotel | Distance 0-150m",
+      flightsUp: "Direct - SV/BG",
+      flightsDown: "Direct - SV/BG", 
+      food: "Buffet Breakfast, Lunch, Evening Snacks & Dinner",
+      specialServices: "Special Train, Ziyara + Guide + Dae"
     }
   ];
 
