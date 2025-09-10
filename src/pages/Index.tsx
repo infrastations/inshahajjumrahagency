@@ -470,25 +470,12 @@ const Index = () => {
             </div>
 
             <div className="relative">
-              <div className="bg-gradient-to-br from-[#2C5F73] to-[#5C8D89] rounded-2xl p-8 h-96 flex flex-col items-center justify-center text-white">
-                <div className="text-center mb-6">
-                  <div className="w-20 h-20 bg-[#D4AF37] rounded-full flex items-center justify-center mb-4 mx-auto">
-                    <span className="text-[#0D2F4B] font-bold text-sm">MECCA</span>
-                  </div>
-                  <div className="w-1 h-20 bg-[#D4AF37] mx-auto mb-4"></div>
-                  <div className="w-16 h-16 bg-[#D4AF37] rounded-full flex items-center justify-center mx-auto">
-                    <span className="text-[#0D2F4B] font-bold text-xs">DHAKA</span>
-                  </div>
-                </div>
-                <div className="bg-[#0D2F4B]/90 px-6 py-3 rounded-full">
-                  <div className="flex items-center space-x-4">
-                    <span className="text-white font-semibold">BANGLADESH</span>
-                    <div className="w-8 h-px bg-[#D4AF37]"></div>
-                    <Plane className="w-5 h-5 text-[#D4AF37]" />
-                    <div className="w-8 h-px bg-[#D4AF37]"></div>
-                    <span className="text-white font-semibold">SAUDI ARABIA</span>
-                  </div>
-                </div>
+              <div className="rounded-2xl overflow-hidden h-96">
+                <img 
+                  src="/lovable-uploads/b1f856c5-4505-44ca-9e20-d78a24a2e35d.png"
+                  alt="Route from Bangladesh to Mecca"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
