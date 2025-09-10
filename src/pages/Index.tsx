@@ -14,6 +14,12 @@ import muslimScholar2 from '@/assets/muslim-scholar-2.jpg';
 import muslimScholar3 from '@/assets/muslim-scholar-3.jpg';
 import muslimScholar4 from '@/assets/muslim-scholar-4.jpg';
 import muslimScholar5 from '@/assets/muslim-scholar-5.jpg';
+import kaabaTawaf from '@/assets/kaaba-tawaf.jpg';
+import madinahMosque from '@/assets/madinah-mosque.jpg';
+import islamicMinarets from '@/assets/islamic-minarets.jpg';
+import muzdalifahNight from '@/assets/muzdalifah-night.jpg';
+import kaabaNight from '@/assets/kaaba-night.jpg';
+import masjidAlHaramAerial from '@/assets/masjid-al-haram-aerial.jpg';
 
 const Index = () => {
   const packages = [
@@ -25,7 +31,7 @@ const Index = () => {
       duration: "35-40 Days",
       rating: 4.99,
       reviews: 109,
-      image: "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=400&h=300&fit=crop",
+      image: kaabaTawaf,
       hotelMakkah: "Hotel Ainan Maluq Al-Omari/Equivalent Hotel | Distance 600-700m.",
       hotelMadinah: "Mar'azza in Madinah/Similar Hotel | Distance 300-400m",
       flightsUp: "Direct - SV/BG",
@@ -41,7 +47,7 @@ const Index = () => {
       duration: "35-40 Days",
       rating: 4.99,
       reviews: 109,
-      image: "https://images.unsplash.com/photo-1564769625392-651b530c4482?w=400&h=300&fit=crop",
+      image: madinahMosque,
       hotelMakkah: "Hotel Adnan Maluq Al-Omari/Equivalent Hotel | Distance 600-700m.",
       hotelMadinah: "Mar'azza in Madinah | Distance 300-400m",
       flightsUp: "Direct - SV/BG",
@@ -57,7 +63,7 @@ const Index = () => {
       duration: "30-36 Days",
       rating: 4.99,
       reviews: 109,
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+      image: islamicMinarets,
       hotelMakkah: "Three Star Hotel | Distance 300-400m",
       hotelMadinah: "Three Star Hotel | Distance 200-300m",
       flightsUp: "Direct - SV/BG",
@@ -72,7 +78,7 @@ const Index = () => {
       duration: "20-25 Days",
       rating: 4.99,
       reviews: 109,
-      image: "https://images.unsplash.com/photo-1542816417-0983c9c9ad53?w=400&h=300&fit=crop",
+      image: muzdalifahNight,
       hotelMakkah: "Five Star Hotel | Distance 0-150m.",
       hotelMadinah: "Five Star Hotel | Distance 0-150m",
       flightsUp: "Direct - SV/BG",
@@ -87,7 +93,7 @@ const Index = () => {
       duration: "18-21 Days",
       rating: 4.99,
       reviews: 109,
-      image: "https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?w=400&h=300&fit=crop",
+      image: kaabaNight,
       hotelMakkah: "The Clock Towers | Distance 0m.",
       hotelMadinah: "Anwar Al Madinah Movenpick/Similar Five star | Distance 0m.",
       flightsUp: "Direct - SV/BG",
@@ -102,7 +108,7 @@ const Index = () => {
       duration: "18-21 Days",
       rating: 4.99,
       reviews: 109,
-      image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=300&fit=crop",
+      image: masjidAlHaramAerial,
       hotelMakkah: "Swissotel Al Maqam Makkah/Equivalent Hotel | Distance 0-150m.",
       hotelMadinah: "Anwar Al Madinah Movenpick/Equivalent Hotel | Distance 0-150m",
       flightsUp: "Direct - SV/BG",
