@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Phone, MessageCircle, ChevronDown } from 'lucide-react';
+import inshaLogo from '@/assets/insha-logo.png';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,14 +17,12 @@ const Navigation = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <span className="text-cream font-display font-bold text-xl">إ</span>
-            </div>
-            <div>
-              <h1 className="font-display font-bold text-xl text-sapphire">Insha</h1>
-              <p className="text-xs text-muted-foreground font-body">Hajj Umrah Agency</p>
-            </div>
+          <div className="flex items-center space-x-3">
+            <img 
+              src={inshaLogo} 
+              alt="InSha Hajj & Umrah Group" 
+              className="h-12 w-auto object-contain"
+            />
           </div>
 
           {/* Desktop Navigation */}

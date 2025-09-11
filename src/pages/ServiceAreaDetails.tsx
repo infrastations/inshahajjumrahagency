@@ -444,7 +444,7 @@ const ServiceAreaDetails = () => {
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
                     <h3 className="font-display text-2xl font-bold text-sapphire mb-6">
-                      Insha Hajj Umrah - {displayDistrict} Branch
+                      InSha Hajj & Umrah Group - {displayDistrict} Branch
                     </h3>
                     
                     <div className="space-y-4">

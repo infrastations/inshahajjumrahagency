@@ -238,11 +238,11 @@ const Index = () => {
               <div className="w-16 h-1 bg-golden"></div>
             </div>
             <h2 className="font-display text-4xl font-bold text-golden mb-6">
-              Key Highlights: Insha Hajj Umrah Agency
+              Key Highlights: InSha Hajj & Umrah Group
             </h2>
             <p className="font-body text-xl text-white/80 max-w-4xl mx-auto">
               With a steadfast commitment to <span className="text-[#D4AF37] font-semibold">excellence</span>, 
-              Insha Hajj Umrah Agency has achieved remarkable milestones in serving the pilgrims' community.
+              InSha Hajj & Umrah Group has achieved remarkable milestones in serving the pilgrims' community.
             </p>
           </div>
 
@@ -451,10 +451,10 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="bg-white rounded-2xl p-8 shadow-elevated">
               <h2 className="font-display text-3xl font-bold text-[#D4AF37] mb-6">
-                Insha Service Area
+                InSha Service Area
               </h2>
               <p className="font-body text-lg text-gray-600 mb-8">
-                Find your nearby Hajj & Umrah agency associated with Insha Hajj Umrah Agency Bangladesh. 
+                Find your nearby Hajj & Umrah agency associated with InSha Hajj & Umrah Group Bangladesh. 
                 Identify the trusted Umrah agents in your area and get in touch with them to facilitate 
                 your next holy journey to Makkah and Madina.
               </p>

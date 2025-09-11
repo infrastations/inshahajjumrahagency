@@ -9,13 +9,13 @@ const CompanyStats = () => {
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 space-y-6 border border-white/20 shadow-2xl">
             <div className="text-center mb-8">
               <h3 className="font-display text-3xl font-semibold text-white mb-4">
-                Insha Hajj Umrah Agency
+                InSha Hajj & Umrah Group
               </h3>
               <p className="text-white font-body text-xl mb-4">
                 Best Agency in Bangladesh
               </p>
               <p className="text-white/90 font-body leading-relaxed max-w-2xl mx-auto">
-                Insha Hajj Umrah Agency in Bangladesh was established in January 2023. 
+                InSha Hajj & Umrah Group in Bangladesh was established in January 2023. 
                 Aiming to provide a comprehensive and all-in-one experience for individuals 
                 undertaking the holy pilgrimage of Hajj and Umrah from any city in Bangladesh.
               </p>

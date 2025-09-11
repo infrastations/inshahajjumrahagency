@@ -14,14 +14,12 @@ const Footer = () => {
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
           {/* Company Info */}
           <div className="space-y-6">
-            <div className="flex items-center space-x-2">
-              <div className="w-12 h-12 bg-golden rounded-lg flex items-center justify-center">
-                <span className="text-sapphire font-display font-bold text-xl">إ</span>
-              </div>
-              <div>
-                <h3 className="font-display font-bold text-xl">Insha</h3>
-                <p className="text-sm text-white font-body">Hajj Umrah Agency</p>
-              </div>
+            <div className="flex items-center space-x-3">
+              <img 
+                src="/insha-logo.png" 
+                alt="InSha Hajj & Umrah Group" 
+                className="h-12 w-auto object-contain brightness-0 invert"
+              />
             </div>
             
             <div className="space-y-4">
@@ -135,7 +133,7 @@ const Footer = () => {
                   <a href="/sitemap" className="hover:text-golden transition-colors text-white">Sitemap</a>
                 </div>
                 <div className="text-white">
-                  Copyright © 2025 Insha Hajj Umrah Agency Ltd. | All rights reserved.
+                  Copyright © 2025 InSha Hajj & Umrah Group Ltd. | All rights reserved.
                 </div>
               </div>
               <div className="mt-2">

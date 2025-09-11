@@ -199,7 +199,7 @@ const ContactUs = () => {
                 <CardContent className="space-y-6">
                   <div className="bg-white/10 rounded-lg p-6">
                     <h4 className="font-display text-xl font-semibold text-white mb-4">
-                      Insha Hajj Umrah - Madaripur Branch
+                      InSha Hajj & Umrah Group - Madaripur Branch
                     </h4>
                     
                     <div className="space-y-3">
