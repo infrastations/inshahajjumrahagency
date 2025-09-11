@@ -101,16 +101,60 @@ const ServiceAreaDetails = () => {
                 </Link>
             </div>
             <div className="relative">
-              <div className="bg-white rounded-2xl p-4 shadow-elevated">
-                <div className="grid grid-cols-2 gap-4">
-                  <div 
-                    className="h-48 bg-cover bg-center rounded-lg"
-                    style={{ backgroundImage: "url('https://images.unsplash.com/photo-1564769625392-651b530c4482?w=300&h=200&fit=crop')" }}
-                  ></div>
-                  <div 
-                    className="h-48 bg-cover bg-center rounded-lg"
-                    style={{ backgroundImage: "url('https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=300&h=200&fit=crop')" }}
-                  ></div>
+              <div className="bg-white rounded-2xl p-6 shadow-elevated">
+                <div className="flex items-center gap-6">
+                  {/* Dynamic City Image */}
+                  <div className="flex-1">
+                    <div 
+                      className="h-64 bg-cover bg-center rounded-lg relative overflow-hidden"
+                      style={{ backgroundImage: `url('https://images.unsplash.com/photo-1632823471565-1ecdf9fb3c7e?w=500&h=400&fit=crop')` }}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                      <div className="absolute bottom-4 left-4 right-4 text-center">
+                        <h3 className="text-white font-display text-2xl font-bold drop-shadow-lg">
+                          {displayDistrict}
+                        </h3>
+                        <p className="text-white/90 font-body text-sm drop-shadow">
+                          Bangladesh
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Arrow */}
+                  <div className="flex justify-center items-center px-4">
+                    <svg 
+                      className="w-12 h-12 text-golden animate-pulse" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        strokeWidth={2} 
+                        d="M13 7l5 5m0 0l-5 5m5-5H6" 
+                      />
+                    </svg>
+                  </div>
+                  
+                  {/* Destination Image */}
+                  <div className="flex-1">
+                    <div 
+                      className="h-64 bg-cover bg-center rounded-lg relative overflow-hidden"
+                      style={{ backgroundImage: `url('${routeImage}')` }}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                      <div className="absolute bottom-4 left-4 right-4 text-center">
+                        <h3 className="text-white font-display text-2xl font-bold drop-shadow-lg">
+                          Makkah & Madinah
+                        </h3>
+                        <p className="text-white/90 font-body text-sm drop-shadow">
+                          Saudi Arabia
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
