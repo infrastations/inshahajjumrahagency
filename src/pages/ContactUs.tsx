@@ -73,16 +73,15 @@ const ContactUs = () => {
           
           <div className="text-center mb-12">
             <h1 className="font-display text-5xl font-bold text-white mb-6">
-              Request for Booking with Hijaz Hajj Umrah Ltd, Bangladesh
+              Request for Booking with InSha Hajj & Umrah Group, Bangladesh
             </h1>
             <p className="font-body text-lg text-white/80 max-w-4xl mx-auto leading-relaxed">
               Request for the industry best expert guidance, personalized assistance, and seamless umrah arrangements for your spiritual journey to Haramain in Makkah and Madinah.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            {/* Contact Form */}
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20">
+          <div className="flex justify-center max-w-4xl mx-auto">
+            <Card className="bg-white/10 backdrop-blur-sm border-white/20 w-full">
               <CardHeader>
                 <CardTitle className="font-display text-2xl text-white text-center">
                   Contact Form
@@ -91,7 +90,7 @@ const ContactUs = () => {
                   Fields with (*) are required.
                 </p>
               </CardHeader>
-              <CardContent>
+              <CardContent className="p-8">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <label htmlFor="fullName" className="block text-white font-body font-semibold mb-2">
@@ -165,83 +164,6 @@ const ContactUs = () => {
                 </form>
               </CardContent>
             </Card>
-
-            {/* Contact Information */}
-            <div className="space-y-8">
-              {/* Hajj Pre-registration Card */}
-              <Card className="bg-jade text-white">
-                <CardContent className="p-8 text-center">
-                  <h3 className="font-display text-2xl font-bold mb-4">
-                    Hajj pre-registration is going on - 2026
-                  </h3>
-                  <h4 className="font-display text-xl font-semibold mb-4">
-                    Are you planning for Hajj in 2026?
-                  </h4>
-                  <p className="font-body mb-4">
-                    <span className="text-golden font-semibold">Hajj pre-registration</span> for 2026 is now open! Ensure your spot for this spiritual journey by completing your pre-registration today.
-                  </p>
-                  <p className="font-body text-sm mb-6">
-                    Visit our office for more details and to begin your Hajj preparations with us. Don't miss this opportunity.
-                  </p>
-                </CardContent>
-              </Card>
-
-              {/* Office Contact Info */}
-              <Card className="bg-background border-white/20">
-                <CardHeader>
-                  <CardTitle className="font-display text-2xl text-white text-center">
-                    Contact Our Madaripur Office
-                  </CardTitle>
-                  <p className="text-white/80 text-center font-body">
-                    Get in touch with our local representatives for personalized assistance
-                  </p>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="bg-white/10 rounded-lg p-6">
-                    <h4 className="font-display text-xl font-semibold text-white mb-4">
-                      InSha Hajj & Umrah Group - Madaripur Branch
-                    </h4>
-                    
-                    <div className="space-y-3">
-                      <div className="flex items-center text-white/80">
-                        <MapPin className="w-5 h-5 text-golden mr-3 flex-shrink-0" />
-                        <span className="font-body">Madaripur City Center, Bangladesh</span>
-                      </div>
-                      
-                      <div className="flex items-center text-white/80">
-                        <Phone className="w-5 h-5 text-golden mr-3 flex-shrink-0" />
-                        <span className="font-body">+88 01XXX-XXXXXX</span>
-                      </div>
-                      
-                      <div className="flex items-center text-white/80">
-                        <Mail className="w-5 h-5 text-golden mr-3 flex-shrink-0" />
-                        <span className="font-body">madaripur@inshahajj.com</span>
-                      </div>
-                      
-                      <div className="space-y-1">
-                        <div className="flex items-start text-white/80">
-                          <Clock className="w-5 h-5 text-golden mr-3 mt-0.5 flex-shrink-0" />
-                          <div className="font-body">
-                            <p>Sunday - Thursday: 9:00 AM - 6:00 PM</p>
-                            <p>Friday: 2:00 PM - 6:00 PM</p>
-                            <p>Saturday: 9:00 AM - 4:00 PM</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="text-center">
-                    <h5 className="font-display text-lg font-semibold text-white mb-3">
-                      Ready to Start Your Journey?
-                    </h5>
-                    <p className="text-white/80 font-body mb-4">
-                      Book a consultation with our Madaripur team today
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
           </div>
         </div>
       </section>
