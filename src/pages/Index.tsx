@@ -193,6 +193,62 @@ const Index = () => {
     "Mymensingh", "Jamalpur", "Netrokona", "Sherpur"
   ];
 
+  // Testimonials data from JSON format
+  const testimonials = [
+    {
+      id: 1,
+      name: "Monir Hossain Noyon",
+      date: "August, 2022",
+      rating: 5,
+      review: "One of the best service. They are very well organized and friendly. Highly recommend for anyone planning their Hajj or Umrah journey. The team was professional and took care of everything.",
+      platform: "Google",
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
+    },
+    {
+      id: 2,
+      name: "Fatima Ahmed",
+      date: "September, 2022",
+      rating: 5,
+      review: "Excellent service from start to finish. The accommodation was perfect, very close to Haram. The guides were knowledgeable and helpful throughout the journey. Alhamdulillah, it was a blessed experience.",
+      platform: "Facebook",
+      avatar: "https://images.unsplash.com/photo-1755278338891-e8d8481ff087?w=100&h=100&fit=crop"
+    },
+    {
+      id: 3,
+      name: "Abdul Rahman Khan",
+      date: "October, 2022",
+      rating: 5,
+      review: "Amazing experience with InSha Hajj & Umrah Group. The package was value for money and everything was well organized. The team helped us with visa processing and provided excellent guidance.",
+      platform: "Google",
+      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop"
+    },
+    {
+      id: 4,
+      name: "Khadija Begum",
+      date: "November, 2022",
+      rating: 5,
+      review: "SubhanAllah! What a wonderful journey it was. InSha team made our Umrah very comfortable and hassle-free. The hotels were excellent and the food arrangements were perfect. May Allah bless them.",
+      platform: "TripAdvisor",
+      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop"
+    }
+  ];
+
+  // Testimonial navigation state
+  const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
+
+  // Testimonial navigation functions
+  const nextTestimonial = () => {
+    setCurrentTestimonialIndex((prev) => 
+      prev === testimonials.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const prevTestimonial = () => {
+    setCurrentTestimonialIndex((prev) => 
+      prev === 0 ? testimonials.length - 1 : prev - 1
+    );
+  };
+
 
   const mapContainer = useRef(null);
   const map = useRef(null);
@@ -555,47 +611,47 @@ const Index = () => {
             </div>
 
             <div className="lg:w-1/2 grid md:grid-cols-2 gap-6">
-              <div className="relative group cursor-pointer">
-                <div 
-                  className="h-48 bg-cover bg-center rounded-lg relative overflow-hidden"
-                  style={{ backgroundImage: "url('https://plus.unsplash.com/premium_photo-1676929358405-7b65c955630d?w=400&h=300&fit=crop')" }}
-                >
-                  <div className="absolute inset-0 bg-sapphire/30 group-hover:bg-sapphire/50 transition-all"></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 bg-golden/90 rounded-full flex items-center justify-center">
-                      <PlayCircle className="w-8 h-8 text-sapphire" />
+              <a href="https://www.youtube.com/watch?v=W-yRSRvKgNQ" target="_blank" className="block">
+                <div className="relative group cursor-pointer">
+                  <div 
+                    className="h-48 bg-cover bg-center rounded-lg relative overflow-hidden"
+                    style={{ backgroundImage: "url('https://plus.unsplash.com/premium_photo-1676929358405-7b65c955630d?w=400&h=300&fit=crop')" }}
+                  >
+                    <div className="absolute inset-0 bg-sapphire/30 group-hover:bg-sapphire/50 transition-all"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-16 h-16 bg-golden/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <PlayCircle className="w-8 h-8 text-sapphire" />
+                      </div>
                     </div>
-                  </div>
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <a href="https://www.youtube.com/watch?v=W-yRSRvKgNQ" target="_blank" className="watch-video-link">
+                    <div className="absolute bottom-4 left-4 right-4">
                       <div className="bg-sapphire/90 text-white px-3 py-1 rounded text-sm font-body">
                         Watch Video
                       </div>
-                    </a>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </a>
 
-              <div className="relative group cursor-pointer">
-                <div 
-                  className="h-48 bg-cover bg-center rounded-lg relative overflow-hidden"
-                  style={{ backgroundImage: "url('https://images.unsplash.com/photo-1591004272853-1462c050dca8?w=400&h=300&fit=crop')" }}
-                >
-                  <div className="absolute inset-0 bg-sapphire/30 group-hover:bg-sapphire/50 transition-all"></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 bg-golden/90 rounded-full flex items-center justify-center">
-                      <PlayCircle className="w-8 h-8 text-sapphire" />
+              <a href="https://www.youtube.com/watch?v=I_gEpAXJIfA" target="_blank" className="block">
+                <div className="relative group cursor-pointer">
+                  <div 
+                    className="h-48 bg-cover bg-center rounded-lg relative overflow-hidden"
+                    style={{ backgroundImage: "url('https://images.unsplash.com/photo-1591004272853-1462c050dca8?w=400&h=300&fit=crop')" }}
+                  >
+                    <div className="absolute inset-0 bg-sapphire/30 group-hover:bg-sapphire/50 transition-all"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-16 h-16 bg-golden/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <PlayCircle className="w-8 h-8 text-sapphire" />
+                      </div>
                     </div>
-                  </div>
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <a href=" https://www.youtube.com/watch?v=I_gEpAXJIfA" target="_blank" className="watch-video-link">
+                    <div className="absolute bottom-4 left-4 right-4">
                       <div className="bg-sapphire/90 text-white px-3 py-1 rounded text-sm font-body">
                         Watch Video
                       </div>
-                    </a>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
@@ -621,29 +677,57 @@ const Index = () => {
                 <div className="flex items-start space-x-6">
                   <div 
                     className="w-16 h-16 bg-cover bg-center rounded-full flex-shrink-0"
-                    style={{ backgroundImage: "url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop')" }}
+                    style={{ backgroundImage: `url('${testimonials[currentTestimonialIndex].avatar}')` }}
                   ></div>
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-4">
                       <div>
-                        <h4 className="font-body font-semibold text-lg">Monir Hossain Noyon</h4>
-                        <p className="text-sm text-white/80 font-body">August, 2022</p>
+                        <h4 className="font-body font-semibold text-lg">{testimonials[currentTestimonialIndex].name}</h4>
+                        <p className="text-sm text-white/80 font-body">{testimonials[currentTestimonialIndex].date}</p>
                       </div>
                       <div className="flex items-center space-x-1">
-                        {[...Array(5)].map((_, i) => (
+                        {[...Array(testimonials[currentTestimonialIndex].rating)].map((_, i) => (
                           <Star key={i} className="w-4 h-4 fill-golden text-golden" />
                         ))}
                       </div>
                     </div>
                     <p className="font-body text-white/90 leading-relaxed">
-                      One of the best service. They are very well organized and friendly. Highly recommend...
-                      <span className="text-golden cursor-pointer ml-2">read more</span>
+                      {testimonials[currentTestimonialIndex].review.length > 150 
+                        ? `${testimonials[currentTestimonialIndex].review.substring(0, 150)}...` 
+                        : testimonials[currentTestimonialIndex].review}
+                      {testimonials[currentTestimonialIndex].review.length > 150 && (
+                        <span className="text-golden cursor-pointer ml-2">read more</span>
+                      )}
                     </p>
                     <div className="mt-4 flex items-center justify-between">
-                      <span className="text-sm text-white/60 font-body">Google</span>
+                      <span className="text-sm text-white/60 font-body">{testimonials[currentTestimonialIndex].platform}</span>
                       <div className="flex items-center space-x-4">
-                        <button className="text-white/60 hover:text-white">←</button>
-                        <button className="text-white/60 hover:text-white">→</button>
+                        <button 
+                          onClick={prevTestimonial}
+                          className="text-white/60 hover:text-white transition-colors duration-200 text-xl font-bold"
+                          aria-label="Previous testimonial"
+                        >
+                          ←
+                        </button>
+                        <div className="flex space-x-2">
+                          {testimonials.map((_, index) => (
+                            <button
+                              key={index}
+                              onClick={() => setCurrentTestimonialIndex(index)}
+                              className={`w-2 h-2 rounded-full transition-colors duration-200 ${
+                                index === currentTestimonialIndex ? 'bg-golden' : 'bg-white/30'
+                              }`}
+                              aria-label={`Go to testimonial ${index + 1}`}
+                            />
+                          ))}
+                        </div>
+                        <button 
+                          onClick={nextTestimonial}
+                          className="text-white/60 hover:text-white transition-colors duration-200 text-xl font-bold"
+                          aria-label="Next testimonial"
+                        >
+                          →
+                        </button>
                       </div>
                     </div>
                   </div>
