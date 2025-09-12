@@ -14,7 +14,7 @@ export default defineConfig(({ mode }) => ({
     mode === 'development' &&
     componentTagger(),
   ].filter(Boolean),
-  base: "https://infrastations.github.io/inshahajjumrahagency/", 
+  base: "/inshahajjumrahagency/", // Fixed: Use repository name only
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
