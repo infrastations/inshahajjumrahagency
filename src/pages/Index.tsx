@@ -353,7 +353,7 @@ const Index = () => {
               <div className="relative group cursor-pointer">
                 <div 
                   className="h-48 bg-cover bg-center rounded-lg relative overflow-hidden"
-                  style={{ backgroundImage: "url('https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?w=400&h=300&fit=crop')" }}
+                  style={{ backgroundImage: "url('https://plus.unsplash.com/premium_photo-1676929358405-7b65c955630d?w=400&h=300&fit=crop')" }}
                 >
                   <div className="absolute inset-0 bg-sapphire/30 group-hover:bg-sapphire/50 transition-all"></div>
                   <div className="absolute inset-0 flex items-center justify-center">
@@ -362,9 +362,11 @@ const Index = () => {
                     </div>
                   </div>
                   <div className="absolute bottom-4 left-4 right-4">
-                    <div className="bg-sapphire/90 text-white px-3 py-1 rounded text-sm font-body">
-                      Watch Video
-                    </div>
+                    <a href="https://www.youtube.com/watch?v=W-yRSRvKgNQ" target="_blank" className="watch-video-link">
+                      <div className="bg-sapphire/90 text-white px-3 py-1 rounded text-sm font-body">
+                        Watch Video
+                      </div>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -372,7 +374,7 @@ const Index = () => {
               <div className="relative group cursor-pointer">
                 <div 
                   className="h-48 bg-cover bg-center rounded-lg relative overflow-hidden"
-                  style={{ backgroundImage: "url('https://images.unsplash.com/photo-1542816417-0983c9c9ad53?w=400&h=300&fit=crop')" }}
+                  style={{ backgroundImage: "url('https://images.unsplash.com/photo-1591004272853-1462c050dca8?w=400&h=300&fit=crop')" }}
                 >
                   <div className="absolute inset-0 bg-sapphire/30 group-hover:bg-sapphire/50 transition-all"></div>
                   <div className="absolute inset-0 flex items-center justify-center">
@@ -381,9 +383,11 @@ const Index = () => {
                     </div>
                   </div>
                   <div className="absolute bottom-4 left-4 right-4">
-                    <div className="bg-sapphire/90 text-white px-3 py-1 rounded text-sm font-body">
-                      Watch Video
-                    </div>
+                    <a href=" https://www.youtube.com/watch?v=I_gEpAXJIfA" target="_blank" className="watch-video-link">
+                      <div className="bg-sapphire/90 text-white px-3 py-1 rounded text-sm font-body">
+                        Watch Video
+                      </div>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -396,7 +400,7 @@ const Index = () => {
       <section className="py-20 bg-background relative">
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=1200&h=600&fit=crop')" }}
+          style={{ backgroundImage: "url('https://plus.unsplash.com/premium_photo-1676929358405-7b65c955630d?w=400&h=300&fit=crop')" }}
         ></div>
         
         <div className="container mx-auto px-4 relative z-10">

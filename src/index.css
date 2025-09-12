@@ -144,3 +144,6 @@
     @apply bg-background text-foreground;
   }
 }
+.watch-video-link:hover {
+  text-decoration: underline;
+}
