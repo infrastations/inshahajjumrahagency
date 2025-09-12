@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Users, MapPin, Clock, Plane, Star, PlayCircle, Map, Phone } from 'lucide-react';
+import { ArrowRight, Users, MapPin, Clock, Plane, Star, PlayCircle, Map, Phone, ChevronUp } from 'lucide-react';
 import muslimScholar1 from '@/assets/muslim-scholar-1.jpg';
 import muslimScholar2 from '@/assets/muslim-scholar-2.jpg';
 import muslimScholar3 from '@/assets/muslim-scholar-3.jpg';
@@ -235,6 +235,9 @@ const Index = () => {
 
   // Testimonial navigation state
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
+  
+  // Back to top button state
+  const [showBackToTop, setShowBackToTop] = useState(false);
 
   // Testimonial navigation functions
   const nextTestimonial = () => {
@@ -248,6 +251,22 @@ const Index = () => {
       prev === 0 ? testimonials.length - 1 : prev - 1
     );
   };
+
+  // Back to top functionality
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Show/hide back to top button based on scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show button after scrolling past the hero section (approximately 600px)
+      setShowBackToTop(window.scrollY > 600);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
 
   const mapContainer = useRef(null);
@@ -829,6 +848,17 @@ const Index = () => {
       </section>
 
       <Footer />
+      
+      {/* Floating Back to Top Button */}
+      {showBackToTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-6 right-6 z-50 w-12 h-12 bg-golden hover:bg-golden-dark text-sapphire rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center"
+          aria-label="Back to top"
+        >
+          <ChevronUp className="w-6 h-6" />
+        </button>
+      )}
     </div>
   );
 };

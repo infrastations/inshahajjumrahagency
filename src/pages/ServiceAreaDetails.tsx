@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import { useEffect } from "react";
 import { ArrowLeft, MapPin, Phone, Mail, Clock, Users, Star, FileText, UserCheck, Shield, HeartHandshake, Award, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -10,6 +11,11 @@ import routeImage from "@/assets/bangladesh-to-mecca-route.jpg";
 
 const ServiceAreaDetails = () => {
   const { district } = useParams<{ district: string }>();
+  
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [district]); // Re-run when district changes
   
   // Format district name for display
   const displayDistrict = district?.charAt(0).toUpperCase() + district?.slice(1);
