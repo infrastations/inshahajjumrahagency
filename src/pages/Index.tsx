@@ -20,6 +20,13 @@ import islamicMinarets from '@/assets/islamic-minarets.jpg';
 import muzdalifahNight from '@/assets/muzdalifah-night.jpg';
 import kaabaNight from '@/assets/kaaba-night.jpg';
 import masjidAlHaramAerial from '@/assets/masjid-al-haram-aerial.jpg';
+import React, { useEffect, useRef, useState } from "react";
+import mapboxgl from "mapbox-gl";
+import "mapbox-gl/dist/mapbox-gl.css";
+
+// Note: Replace with your actual Mapbox access token
+// You can get one for free at https://account.mapbox.com/
+mapboxgl.accessToken = "pk.eyJ1IjoibWRyYWtpYnRyb2ZkZXIiLCJhIjoiY21maDJwOWV5MDF3MTJpczhlcXJmYXNsdSJ9.2Ot-AccNp9pold_3I8V3NQ";
 
 const Index = () => {
   const packages = [
@@ -186,6 +193,204 @@ const Index = () => {
     "Mymensingh", "Jamalpur", "Netrokona", "Sherpur"
   ];
 
+
+  const mapContainer = useRef(null);
+  const map = useRef(null);
+  const animationRef = useRef(null);
+  const [mapError, setMapError] = useState(false);
+
+  // Dhaka to Mecca coordinates
+  const route = {
+    type: "Feature",
+    geometry: {
+      type: "LineString",
+      coordinates: [
+        [90.4125, 23.8103], // Dhaka
+        [39.8579, 21.3891], // Mecca
+      ],
+    },
+  };
+
+  useEffect(() => {
+    if (map.current || !mapContainer.current) return; // initialize only once
+    
+    try {
+      map.current = new mapboxgl.Map({
+        container: mapContainer.current,
+        style: "mapbox://styles/mapbox/satellite-streets-v12", // Colorful satellite map
+        center: [65, 30],
+        zoom: 2,
+        pitch: 45,
+        bearing: -20,
+      });
+
+      map.current.on("load", () => {
+        // Add route line
+        map.current.addSource("route", {
+          type: "geojson",
+          data: route,
+        });
+
+        map.current.addLayer({
+          id: "route-line",
+          type: "line",
+          source: "route",
+          paint: {
+            "line-color": "#FFD700", // Golden color to match the theme
+            "line-width": 6,
+            "line-blur": 1,
+            "line-opacity": 0.8,
+          },
+        });
+
+        // Add city markers
+        map.current.addSource("cities", {
+          type: "geojson",
+          data: {
+            type: "FeatureCollection",
+            features: [
+              {
+                type: "Feature",
+                geometry: {
+                  type: "Point",
+                  coordinates: [90.4125, 23.8103], // Dhaka
+                },
+                properties: {
+                  title: "Dhaka",
+                  description: "Departure: Bangladesh"
+                }
+              },
+              {
+                type: "Feature",
+                geometry: {
+                  type: "Point",
+                  coordinates: [39.8579, 21.3891], // Mecca
+                },
+                properties: {
+                  title: "Mecca",
+                  description: "Destination: Saudi Arabia"
+                }
+              }
+            ]
+          }
+        });
+
+        map.current.addLayer({
+          id: "cities",
+          type: "circle",
+          source: "cities",
+          paint: {
+            "circle-radius": 8,
+            "circle-color": "#FFD700",
+            "circle-stroke-width": 2,
+            "circle-stroke-color": "#ffffff"
+          }
+        });
+
+        // Add city labels
+        map.current.addLayer({
+          id: "city-labels",
+          type: "symbol",
+          source: "cities",
+          layout: {
+            "text-field": ["get", "title"],
+            "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
+            "text-size": 12,
+            "text-offset": [0, -2],
+            "text-anchor": "bottom"
+          },
+          paint: {
+            "text-color": "#ffffff",
+            "text-halo-color": "#000000",
+            "text-halo-width": 1
+          }
+        });
+
+        // Add airplane symbol with local airplane icon
+        map.current.loadImage(
+          "/lovable-uploads/aeroplane.png", // Local airplane icon from public folder
+          (error, image) => {
+            if (error) {
+              console.warn("Failed to load airplane icon:", error);
+              return;
+            }
+            if (!map.current.hasImage("plane")) {
+              map.current.addImage("plane", image);
+            }
+            map.current.addSource("plane-point", {
+              type: "geojson",
+              data: {
+                type: "Feature",
+                geometry: {
+                  type: "Point",
+                  coordinates: route.geometry.coordinates[0],
+                },
+              },
+            });
+
+            map.current.addLayer({
+              id: "plane",
+              type: "symbol",
+              source: "plane-point",
+              layout: {
+                "icon-image": "plane",
+                "icon-size": 0.1, // Larger size for better visibility
+                "icon-rotate": 0, // Better angle for the route direction
+                "icon-rotation-alignment": "map",
+                "icon-allow-overlap": true,
+                "icon-ignore-placement": true,
+              },
+            });
+
+            // Animate airplane along the route
+            let progress = 0;
+            function animate() {
+              progress += 0.001;
+              if (progress > 1) progress = 0;
+
+              const line = route.geometry.coordinates;
+              const lng =
+                line[0][0] + (line[1][0] - line[0][0]) * progress;
+              const lat =
+                line[0][1] + (line[1][1] - line[0][1]) * progress;
+
+              if (map.current && map.current.getSource("plane-point")) {
+                map.current.getSource("plane-point").setData({
+                  type: "Feature",
+                  geometry: {
+                    type: "Point",
+                    coordinates: [lng, lat],
+                  },
+                });
+              }
+
+              animationRef.current = requestAnimationFrame(animate);
+            }
+            animate();
+          }
+        );
+      });
+
+      map.current.on("error", (e) => {
+        console.error("Mapbox error:", e);
+        setMapError(true);
+      });
+
+    } catch (error) {
+      console.error("Failed to initialize map:", error);
+      setMapError(true);
+    }
+
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+      if (map.current) {
+        map.current.remove();
+      }
+    };
+  }, []);
+  
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -480,13 +685,43 @@ const Index = () => {
             </div>
 
             <div className="relative">
-              <div className="rounded-2xl overflow-hidden h-96">
-                <img 
-                  src="/lovable-uploads/b1f856c5-4505-44ca-9e20-d78a24a2e35d.png"
-                  alt="Route from Bangladesh to Mecca"
-                  className="w-full h-full object-cover"
+              {mapError ? (
+                // Fallback content when map fails to load
+                <div className="w-full h-[500px] rounded-2xl shadow-lg bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center relative overflow-hidden">
+                  <div className="absolute inset-0 opacity-20">
+                    <div className="w-full h-full bg-repeat" style={{
+                      backgroundImage: "url('data:image/svg+xml,%3Csvg width=\"40\" height=\"40\" viewBox=\"0 0 40 40\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.1\"%3E%3Cpath d=\"m0 40l40-40h-40v40zm0 0l40-40h-40v40z\"/%3E%3C/g%3E%3C/svg%3E')"
+                    }}></div>
+                  </div>
+                  <div className="text-center z-10">
+                    <div className="flex items-center justify-center mb-4">
+                      <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
+                        <Plane className="w-8 h-8 text-white" />
+                      </div>
+                    </div>
+                    <h3 className="text-white text-xl font-semibold mb-2">Journey Route</h3>
+                    <p className="text-white/80 mb-4">From Bangladesh to Mecca</p>
+                    <div className="flex items-center justify-center space-x-4">
+                      <div className="text-center">
+                        <MapPin className="w-5 h-5 text-white mx-auto mb-1" />
+                        <span className="text-white text-sm">Dhaka</span>
+                      </div>
+                      <div className="w-16 h-px bg-white/50 relative">
+                        <Plane className="w-4 h-4 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+                      </div>
+                      <div className="text-center">
+                        <MapPin className="w-5 h-5 text-white mx-auto mb-1" />
+                        <span className="text-white text-sm">Mecca</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div
+                  ref={mapContainer}
+                  className="w-full h-[500px] rounded-2xl shadow-lg"
                 />
-              </div>
+              )}
             </div>
           </div>
         </div>
