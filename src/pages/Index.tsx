@@ -758,10 +758,10 @@ const Index = () => {
                     <Link
                       key={index}
                       to={`/service-area/${area.toLowerCase()}`}
-                      className="flex items-center space-x-2 p-2 hover:bg-gray-50 rounded-lg transition-colors cursor-pointer"
+                      className="flex items-center space-x-2 p-2 hover:bg-golden rounded-lg transition-colors cursor-pointer group"
                     >
-                      <MapPin className="w-4 h-4 text-[#5C8D89] flex-shrink-0" />
-                      <span className="font-body text-sm text-gray-700">{area}</span>
+                      <MapPin className="w-4 h-4 text-[#5C8D89] group-hover:text-white flex-shrink-0 transition-colors" />
+                      <span className="font-body text-sm text-gray-700 group-hover:text-white group-hover:underline transition-colors">{area}</span>
                     </Link>
                   ))}
                 </div>
