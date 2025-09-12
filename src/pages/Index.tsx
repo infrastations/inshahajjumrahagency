@@ -250,9 +250,9 @@ const Index = () => {
             {keyHighlights.map((highlight, index) => (
               <div key={index} className="text-center">
                 <div className="flex items-center justify-center mb-4">
-                  {index === 0 && <MapPin className="w-8 h-8 text-sapphire mr-4" />}
-                  {index === 1 && <Users className="w-8 h-8 text-sapphire mr-4" />}
-                  {index === 2 && <Star className="w-8 h-8 text-sapphire mr-4" />}
+                  {index === 0 && <MapPin className="w-8 h-8 text-white mr-4" />}
+                  {index === 1 && <Users className="w-8 h-8 text-white mr-4" />}
+                  {index === 2 && <Star className="w-8 h-8 text-white mr-4" />}
                   <span className="font-display text-5xl font-bold text-golden">{highlight.number}</span>
                 </div>
                 <h3 className="font-body text-xl font-semibold text-white mb-2">{highlight.title}</h3>

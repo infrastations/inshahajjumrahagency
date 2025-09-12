@@ -1,4 +1,5 @@
 import { MapPin, Phone, Mail } from 'lucide-react';
+import inshaLogo from '@/assets/insha-logo.png';
 
 const Footer = () => {
   return (
@@ -16,9 +17,9 @@ const Footer = () => {
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
               <img 
-                src="/insha-logo.png" 
+                src={inshaLogo}
                 alt="InSha Hajj & Umrah Group" 
-                className="h-12 w-auto object-contain brightness-0 invert"
+                className="h-12 w-auto object-contain"
               />
             </div>
             
