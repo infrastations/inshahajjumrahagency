@@ -113,7 +113,7 @@ const ServiceAreaDetails = () => {
                   <div className="flex-1">
                     <div 
                       className="h-64 bg-cover bg-center rounded-lg relative overflow-hidden"
-                      style={{ backgroundImage: `url('https://images.unsplash.com/photo-1632823471565-1ecdf9fb3c7e?w=500&h=400&fit=crop')` }}
+                      style={{ backgroundImage: `url('https://images.unsplash.com/photo-1564034503-e7c9edcb420c?w=500&h=400&fit=crop')` }}
                     >
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                       <div className="absolute bottom-4 left-4 right-4 text-center">
@@ -275,6 +275,108 @@ const ServiceAreaDetails = () => {
                 className="bg-golden hover:bg-golden-dark text-sapphire font-body font-semibold"
               >
                 Call for Booking
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Exclusive Facilities Section */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="font-display text-4xl font-bold text-white mb-8">
+              Exclusive facilities offered by Hijaz Hajj Umrah Ltd.
+            </h2>
+            <p className="font-body text-lg text-white/80 mb-6 leading-relaxed">
+              Compare Hijaz InSha Hajj & Umrah Group package with other agencies:
+            </p>
+            <p className="font-body text-lg text-white/80 mb-12 leading-relaxed">
+              Many Umrah agencies in Bangladesh offer packages but the service you are looking for might be missing on those packages. You can compare our packages to those and make a decision. Take a look at what Hijaz Hajj Umrah Ltd. offers compared to other agencies-
+            </p>
+
+            {/* Comparison Table */}
+            <div className="bg-white rounded-2xl shadow-elevated overflow-hidden">
+              <table className="w-full">
+                <thead>
+                  <tr className="bg-emerald-500">
+                    <th className="text-left p-4 font-display text-lg font-bold text-white">
+                      Facilities & Service Type
+                    </th>
+                    <th className="text-center p-4 font-display text-lg font-bold text-white">
+                      Hijaz Hajj Umrah Ltd.
+                    </th>
+                    <th className="text-center p-4 font-display text-lg font-bold text-white">
+                      Other Agency
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-gray-200">
+                    <td className="p-4 font-body text-gray-800">Visa Processing</td>
+                    <td className="p-4 text-center font-body text-blue-600 font-semibold">Yes</td>
+                    <td className="p-4 text-center font-body text-blue-600 font-semibold">Yes</td>
+                  </tr>
+                  <tr className="bg-gray-50 border-b border-gray-200">
+                    <td className="p-4 font-body text-gray-800">Hotel Booking</td>
+                    <td className="p-4 text-center font-body text-blue-600 font-semibold">Yes</td>
+                    <td className="p-4 text-center font-body text-blue-600 font-semibold">Yes</td>
+                  </tr>
+                  <tr className="border-b border-gray-200">
+                    <td className="p-4 font-body text-gray-800">Qualified Guides and Scholars</td>
+                    <td className="p-4 text-center font-body text-blue-600 font-semibold">Yes</td>
+                    <td className="p-4 text-center font-body text-red-600 font-semibold">No</td>
+                  </tr>
+                  <tr className="bg-gray-50 border-b border-gray-200">
+                    <td className="p-4 font-body text-gray-800">Ziyarat Tours</td>
+                    <td className="p-4 text-center font-body text-blue-600 font-semibold">Yes</td>
+                    <td className="p-4 text-center font-body text-red-600 font-semibold">No</td>
+                  </tr>
+                  <tr className="border-b border-gray-200">
+                    <td className="p-4 font-body text-gray-800">Experience and Expertise</td>
+                    <td className="p-4 text-center font-body text-blue-600 font-semibold">Yes</td>
+                    <td className="p-4 text-center font-body text-red-600 font-semibold">No</td>
+                  </tr>
+                  <tr className="bg-gray-50 border-b border-gray-200">
+                    <td className="p-4 font-body text-gray-800">Commitment to Safety and Security</td>
+                    <td className="p-4 text-center font-body text-blue-600 font-semibold">Yes</td>
+                    <td className="p-4 text-center font-body text-red-600 font-semibold">No</td>
+                  </tr>
+                  <tr className="border-b border-gray-200">
+                    <td className="p-4 font-body text-gray-800">Booking Flights</td>
+                    <td className="p-4 text-center font-body text-blue-600 font-semibold">Yes</td>
+                    <td className="p-4 text-center font-body text-blue-600 font-semibold">Yes</td>
+                  </tr>
+                  <tr className="bg-gray-50 border-b border-gray-200">
+                    <td className="p-4 font-body text-gray-800">Excellent Customer Support</td>
+                    <td className="p-4 text-center font-body text-blue-600 font-semibold">Yes</td>
+                    <td className="p-4 text-center font-body text-red-600 font-semibold">No</td>
+                  </tr>
+                  <tr className="border-b border-gray-200">
+                    <td className="p-4 font-body text-gray-800">Umrah Training</td>
+                    <td className="p-4 text-center font-body text-blue-600 font-semibold">Yes</td>
+                    <td className="p-4 text-center font-body text-red-600 font-semibold">No</td>
+                  </tr>
+                  <tr className="bg-gray-50 border-b border-gray-200">
+                    <td className="p-4 font-body text-gray-800">Personalized Attention and Customized Package Options</td>
+                    <td className="p-4 text-center font-body text-blue-600 font-semibold">Yes</td>
+                    <td className="p-4 text-center font-body text-red-600 font-semibold">No</td>
+                  </tr>
+                  <tr className="border-b border-gray-200">
+                    <td className="p-4 font-body text-gray-800">Transparent and Ethical Practices</td>
+                    <td className="p-4 text-center font-body text-blue-600 font-semibold">Yes</td>
+                    <td className="p-4 text-center font-body text-blue-600 font-semibold">Yes</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div className="mt-8 text-center">
+              <Button 
+                size="lg"
+                className="bg-golden hover:bg-golden-dark text-sapphire font-body font-semibold px-8 py-3"
+              >
+                Book Your Package
               </Button>
             </div>
           </div>
