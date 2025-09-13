@@ -1,0 +1,58 @@
+{
+  "submissions": [
+    {
+      "id": "1",
+      "fullName": "Ahmed Rahman Khan",
+      "phoneNumber": "+880 1712-345678",
+      "emailAddress": "ahmed.rahman@gmail.com",
+      "comments": "I am interested in the Economy Umrah package for December 2024. Please provide more details about the accommodation and visa processing time.",
+      "submittedAt": "2024-12-15T10:30:00Z",
+      "status": "new"
+    },
+    {
+      "id": "2",
+      "fullName": "Fatima Khatun",
+      "phoneNumber": "+880 1813-456789",
+      "emailAddress": "fatima.khatun@yahoo.com",
+      "comments": "Looking for family package for 4 people. Need information about Mahram requirements and group discounts.",
+      "submittedAt": "2024-12-14T15:45:00Z",
+      "status": "contacted"
+    },
+    {
+      "id": "3",
+      "fullName": "Mohammad Ali Hasan",
+      "phoneNumber": "+880 1915-567890",
+      "emailAddress": "ali.hasan@hotmail.com",
+      "comments": "Interested in Premium package. Can you arrange for wheelchair assistance during the journey?",
+      "submittedAt": "2024-12-13T09:15:00Z",
+      "status": "contacted"
+    },
+    {
+      "id": "4",
+      "fullName": "Rashida Begum",
+      "phoneNumber": "+880 1712-678901",
+      "emailAddress": "rashida.begum@gmail.com",
+      "comments": "First time going for Umrah. Need complete guidance and support throughout the journey.",
+      "submittedAt": "2024-12-12T14:20:00Z",
+      "status": "completed"
+    },
+    {
+      "id": "5",
+      "fullName": "Ibrahim Sheikh",
+      "phoneNumber": "+880 1813-789012",
+      "emailAddress": "ibrahim.sheikh@outlook.com",
+      "comments": "Planning Umrah for March 2025. Please send detailed itinerary and cost breakdown for Standard package.",
+      "submittedAt": "2024-12-11T11:00:00Z",
+      "status": "new"
+    },
+    {
+      "id": "6",
+      "fullName": "Nafisa Ahmed",
+      "phoneNumber": "+880 1915-890123",
+      "emailAddress": "nafisa.ahmed@gmail.com",
+      "comments": "",
+      "submittedAt": "2024-12-10T16:30:00Z",
+      "status": "new"
+    }
+  ]
+}

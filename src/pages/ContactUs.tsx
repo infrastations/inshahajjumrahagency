@@ -42,6 +42,16 @@ const ContactUs = () => {
     // Here you would typically send the data to your backend
     console.log("Form submitted:", formData);
     
+    // In a real application, you would POST this data to your backend API
+    // For demo purposes, we're just logging it
+    const submissionData = {
+      ...formData,
+      submittedAt: new Date().toISOString(),
+      status: 'new'
+    };
+    
+    console.log("Submission data that would be sent to backend:", submissionData);
+    
     toast({
       title: "Form Submitted Successfully!",
       description: "We will contact you soon. Thank you for your interest in our services.",

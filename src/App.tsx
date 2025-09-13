@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import ServiceAreaDetails from "./pages/ServiceAreaDetails";
 import ContactUs from "./pages/ContactUs";
+import AdminContactSubmissions from "./pages/AdminContactSubmissions";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -20,6 +21,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/service-area/:district" element={<ServiceAreaDetails />} />
           <Route path="/about-us/contact-us" element={<ContactUs />} />
+          <Route path="/in-sha-admin" element={<AdminContactSubmissions />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

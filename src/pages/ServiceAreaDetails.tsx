@@ -7,6 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import PackageCard from "@/components/PackageCard";
+import SectionSeparator from "@/components/SectionSeparator";
 import routeImage from "@/assets/bangladesh-to-mecca-route.jpg";
 
 const ServiceAreaDetails = () => {
@@ -224,6 +225,7 @@ const ServiceAreaDetails = () => {
           </div>
         </div>
       </section>
+      <SectionSeparator />
 
       {/* Available Packages Section */}
       <section className="py-16 bg-background">
@@ -253,6 +255,7 @@ const ServiceAreaDetails = () => {
           </div>
         </div>
       </section>
+      <SectionSeparator />
 
       {/* Budget-friendly Packages Section */}
       <section className="py-16 bg-background">
@@ -278,6 +281,7 @@ const ServiceAreaDetails = () => {
           </div>
         </div>
       </section>
+      <SectionSeparator />
 
       {/* Overview Section */}
       <section className="py-16 bg-background">
@@ -292,6 +296,7 @@ const ServiceAreaDetails = () => {
           </div>
         </div>
       </section>
+      <SectionSeparator />
 
       {/* Visa Requirements Section */}
       <section className="py-16 bg-background">
@@ -337,6 +342,7 @@ const ServiceAreaDetails = () => {
           </div>
         </div>
       </section>
+      <SectionSeparator />
 
       {/* Exclusive Facilities Section */}
       <section className="py-16 bg-background">
@@ -401,6 +407,7 @@ const ServiceAreaDetails = () => {
           </div>
         </div>
       </section>
+      <SectionSeparator />
 
       {/* Why Choose Us Section */}
       <section className="py-16 bg-background">
@@ -459,6 +466,7 @@ const ServiceAreaDetails = () => {
           </div>
         </div>
       </section>
+      <SectionSeparator />
 
       {/* FAQ Section */}
       <section className="py-16 bg-background">
@@ -517,6 +525,7 @@ const ServiceAreaDetails = () => {
           </div>
         </div>
       </section>
+      <SectionSeparator />
 
       {/* Call to Action Section */}
       <section className="py-16 bg-background">
@@ -543,6 +552,7 @@ const ServiceAreaDetails = () => {
           </Link>
         </div>
       </section>
+      <SectionSeparator />
 
       {/* Services Section */}
       <section className="py-16 bg-sapphire">
@@ -596,6 +606,7 @@ const ServiceAreaDetails = () => {
           </div>
         </div>
       </section>
+      <SectionSeparator />
 
       {/* Contact Section */}
       <section className="py-16 bg-sapphire">
@@ -670,6 +681,7 @@ const ServiceAreaDetails = () => {
           </div>
         </div>
       </section>
+      <SectionSeparator />
 
       <Footer />
     </div>

@@ -4,6 +4,7 @@ import CompanyStats from '@/components/CompanyStats';
 import PackageCard from '@/components/PackageCard';
 import ConsultantCard from '@/components/ConsultantCard';
 import Footer from '@/components/Footer';
+import SectionSeparator from '@/components/SectionSeparator';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -470,7 +471,9 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       <Hero />
+      <SectionSeparator />
       <CompanyStats />
+      <SectionSeparator />
 
             {/* Available Umrah Packages from Bangladesh */}
       <section className="py-20 bg-background">
@@ -589,6 +592,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+      <SectionSeparator />
 
       {/* Consultants Section */}
       <section className="py-20 bg-background">
@@ -623,6 +627,7 @@ const Index = () => {
           )}
         </div>
       </section>
+      <SectionSeparator />
 
       {/* Packages Section */}
       <section className="py-20 bg-background">
@@ -655,7 +660,7 @@ const Index = () => {
           </div>
         </div>
       </section>
-
+      <SectionSeparator />
 
       {/* Key Highlights */}
       <section className="py-20 bg-background">
@@ -695,6 +700,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+      <SectionSeparator />
 
       {/* Customized Packages */}
       <section className="py-20 bg-background relative overflow-hidden">
@@ -725,6 +731,7 @@ const Index = () => {
           </Link>
         </div>
       </section>
+      <SectionSeparator />
 
       {/* Video Tutorials */}
       <section className="py-20 bg-background">
@@ -794,6 +801,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+      <SectionSeparator />
 
       {/* Client Testimonials */}
       <section className="py-20 bg-background relative">
@@ -875,6 +883,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+      <SectionSeparator />
 
       {/* Insha Service Area */}
       <section className="py-20 bg-background relative">
@@ -948,6 +957,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+      <SectionSeparator />
 
       {/* Apply for Visa */}
       <section className="py-20 bg-background text-center">
@@ -965,6 +975,7 @@ const Index = () => {
           </Link>
         </div>
       </section>
+      <SectionSeparator />
 
       <Footer />
       

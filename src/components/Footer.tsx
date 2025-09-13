@@ -1,4 +1,5 @@
-import { MapPin, Phone, Mail } from 'lucide-react';
+import { MapPin, Phone, Mail, Settings } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import inshaLogo from '@/assets/insha-logo.png';
 
 const Footer = () => {
@@ -132,6 +133,11 @@ const Footer = () => {
                   <a href="/contact" className="hover:text-golden transition-colors text-white">Contact Us</a>
                   <span className="mx-2 text-white">|</span>
                   <a href="/sitemap" className="hover:text-golden transition-colors text-white">Sitemap</a>
+                  <span className="mx-2 text-white">|</span>
+                  <Link to="/in-sha-admin" className="hover:text-golden transition-colors text-white/60 text-xs flex items-center">
+                    <Settings className="w-3 h-3 mr-1" />
+                    Admin
+                  </Link>
                 </div>
                 <div className="text-white">
                   Copyright © 2025 InSha Hajj & Umrah Group Ltd. | All rights reserved.
