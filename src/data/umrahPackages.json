@@ -7,7 +7,7 @@
         "text": "Super Saver",
         "color": "bg-golden text-sapphire"
       },
-      "image": "kaabaTawaf",
+      "image": "kaaba-tawaf",
       "price": "৳5,25,000 included Food",
       "packages": [
         {
@@ -34,7 +34,7 @@
         "text": "Most Popular",
         "color": "bg-blue-600 text-white"
       },
-      "image": "madinahMosque",
+      "image": "madinah-mosque",
       "price": "৳6,68,000 included Food",
       "packages": [
         {
@@ -77,7 +77,7 @@
         "text": "Premium",
         "color": "bg-purple-600 text-white"
       },
-      "image": "islamicMinarets",
+      "image": "islamic-minarets",
       "price": "৳8,25,000 Food not Included",
       "packages": [
         {

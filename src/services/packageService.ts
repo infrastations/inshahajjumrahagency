@@ -87,6 +87,18 @@ class PackageService {
   // Helper function to map image names to actual imported images
   private getImageSrc(imageName: string): string {
     const imageMap: { [key: string]: string } = {
+      'kaaba-tawaf': kaabaTawaf,
+      'madinah-mosque': madinahMosque,
+      'islamic-minarets': islamicMinarets,
+      'muzdalifah-night': muzdalifahNight,
+      'kaaba-night': kaabaNight,
+      'masjid-al-haram-aerial': masjidAlHaramAerial,
+      'muslim-scholar-1': muslimScholar1,
+      'muslim-scholar-2': muslimScholar2,
+      'muslim-scholar-3': muslimScholar3,
+      'muslim-scholar-4': muslimScholar4,
+      'muslim-scholar-5': muslimScholar5,
+      // Legacy camelCase mappings for backward compatibility
       kaabaTawaf,
       madinahMosque,
       islamicMinarets,
@@ -207,7 +219,13 @@ class PackageService {
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 100));
     
-    return umrahPackagesData.availableUmrahPackages;
+    // Process the JSON data to map image names to actual imported images
+    const processedPackages = umrahPackagesData.availableUmrahPackages.map(pkg => ({
+      ...pkg,
+      image: this.getImageSrc(pkg.image)
+    }));
+    
+    return processedPackages;
   }
 
   // Get consultants data

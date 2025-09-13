@@ -21,6 +21,7 @@ import islamicMinarets from '@/assets/islamic-minarets.jpg';
 import muzdalifahNight from '@/assets/muzdalifah-night.jpg';
 import kaabaNight from '@/assets/kaaba-night.jpg';
 import masjidAlHaramAerial from '@/assets/masjid-al-haram-aerial.jpg';
+import aeroplane from '@/assets/aeroplane.png';
 import React, { useEffect, useRef, useState } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
@@ -231,9 +232,9 @@ const Index = () => {
           }
         });
 
-        // Add airplane symbol with local airplane icon
+        // Add airplane symbol with local airplane icon from assets
         map.current.loadImage(
-          "/lovable-uploads/aeroplane.png", // Local airplane icon from public folder
+          aeroplane, // Use imported local airplane icon from assets
           (error, image) => {
             if (error) {
               console.warn("Failed to load airplane icon:", error);
@@ -259,7 +260,7 @@ const Index = () => {
               source: "plane-point",
               layout: {
                 "icon-image": "plane",
-                "icon-size": 0.1, // Larger size for better visibility
+                "icon-size": 0.1, // User's preferred size for good visibility
                 "icon-rotate": 0, // Better angle for the route direction
                 "icon-rotation-alignment": "map",
                 "icon-allow-overlap": true,
