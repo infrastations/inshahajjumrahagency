@@ -20,6 +20,65 @@ const ServiceAreaDetails = () => {
   // Format district name for display
   const displayDistrict = district?.charAt(0).toUpperCase() + district?.slice(1);
 
+  // Comparison data from JSON format
+  const comparisonData = [
+    {
+      facility: "Visa Processing",
+      hijazHajjUmrah: true,
+      otherAgency: true
+    },
+    {
+      facility: "Hotel Booking",
+      hijazHajjUmrah: true,
+      otherAgency: true
+    },
+    {
+      facility: "Qualified Guides and Scholars",
+      hijazHajjUmrah: true,
+      otherAgency: false
+    },
+    {
+      facility: "Ziyarat Tours",
+      hijazHajjUmrah: true,
+      otherAgency: false
+    },
+    {
+      facility: "Experience and Expertise",
+      hijazHajjUmrah: true,
+      otherAgency: false
+    },
+    {
+      facility: "Commitment to Safety and Security",
+      hijazHajjUmrah: true,
+      otherAgency: false
+    },
+    {
+      facility: "Booking Flights",
+      hijazHajjUmrah: true,
+      otherAgency: true
+    },
+    {
+      facility: "Excellent Customer Support",
+      hijazHajjUmrah: true,
+      otherAgency: false
+    },
+    {
+      facility: "Umrah Training",
+      hijazHajjUmrah: true,
+      otherAgency: false
+    },
+    {
+      facility: "Personalized Attention and Customized Package Options",
+      hijazHajjUmrah: true,
+      otherAgency: false
+    },
+    {
+      facility: "Transparent and Ethical Practices",
+      hijazHajjUmrah: true,
+      otherAgency: true
+    }
+  ];
+
   const packages = [
     {
       title: "Super Saver Umrah Package",
@@ -299,85 +358,47 @@ const ServiceAreaDetails = () => {
             <div className="bg-white rounded-2xl shadow-elevated overflow-hidden">
               <table className="w-full">
                 <thead>
-                  <tr className="bg-emerald-500">
-                    <th className="text-left p-4 font-display text-lg font-bold text-white">
+                  <tr className="bg-golden">
+                    <th className="text-left p-4 font-display text-lg font-bold text-sapphire">
                       Facilities & Service Type
                     </th>
-                    <th className="text-center p-4 font-display text-lg font-bold text-white">
+                    <th className="text-center p-4 font-display text-lg font-bold text-sapphire">
                       Hijaz Hajj Umrah Ltd.
                     </th>
-                    <th className="text-center p-4 font-display text-lg font-bold text-white">
+                    <th className="text-center p-4 font-display text-lg font-bold text-sapphire">
                       Other Agency
                     </th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="border-b border-gray-200">
-                    <td className="p-4 font-body text-gray-800">Visa Processing</td>
-                    <td className="p-4 text-center font-body text-blue-600 font-semibold">Yes</td>
-                    <td className="p-4 text-center font-body text-blue-600 font-semibold">Yes</td>
-                  </tr>
-                  <tr className="bg-gray-50 border-b border-gray-200">
-                    <td className="p-4 font-body text-gray-800">Hotel Booking</td>
-                    <td className="p-4 text-center font-body text-blue-600 font-semibold">Yes</td>
-                    <td className="p-4 text-center font-body text-blue-600 font-semibold">Yes</td>
-                  </tr>
-                  <tr className="border-b border-gray-200">
-                    <td className="p-4 font-body text-gray-800">Qualified Guides and Scholars</td>
-                    <td className="p-4 text-center font-body text-blue-600 font-semibold">Yes</td>
-                    <td className="p-4 text-center font-body text-red-600 font-semibold">No</td>
-                  </tr>
-                  <tr className="bg-gray-50 border-b border-gray-200">
-                    <td className="p-4 font-body text-gray-800">Ziyarat Tours</td>
-                    <td className="p-4 text-center font-body text-blue-600 font-semibold">Yes</td>
-                    <td className="p-4 text-center font-body text-red-600 font-semibold">No</td>
-                  </tr>
-                  <tr className="border-b border-gray-200">
-                    <td className="p-4 font-body text-gray-800">Experience and Expertise</td>
-                    <td className="p-4 text-center font-body text-blue-600 font-semibold">Yes</td>
-                    <td className="p-4 text-center font-body text-red-600 font-semibold">No</td>
-                  </tr>
-                  <tr className="bg-gray-50 border-b border-gray-200">
-                    <td className="p-4 font-body text-gray-800">Commitment to Safety and Security</td>
-                    <td className="p-4 text-center font-body text-blue-600 font-semibold">Yes</td>
-                    <td className="p-4 text-center font-body text-red-600 font-semibold">No</td>
-                  </tr>
-                  <tr className="border-b border-gray-200">
-                    <td className="p-4 font-body text-gray-800">Booking Flights</td>
-                    <td className="p-4 text-center font-body text-blue-600 font-semibold">Yes</td>
-                    <td className="p-4 text-center font-body text-blue-600 font-semibold">Yes</td>
-                  </tr>
-                  <tr className="bg-gray-50 border-b border-gray-200">
-                    <td className="p-4 font-body text-gray-800">Excellent Customer Support</td>
-                    <td className="p-4 text-center font-body text-blue-600 font-semibold">Yes</td>
-                    <td className="p-4 text-center font-body text-red-600 font-semibold">No</td>
-                  </tr>
-                  <tr className="border-b border-gray-200">
-                    <td className="p-4 font-body text-gray-800">Umrah Training</td>
-                    <td className="p-4 text-center font-body text-blue-600 font-semibold">Yes</td>
-                    <td className="p-4 text-center font-body text-red-600 font-semibold">No</td>
-                  </tr>
-                  <tr className="bg-gray-50 border-b border-gray-200">
-                    <td className="p-4 font-body text-gray-800">Personalized Attention and Customized Package Options</td>
-                    <td className="p-4 text-center font-body text-blue-600 font-semibold">Yes</td>
-                    <td className="p-4 text-center font-body text-red-600 font-semibold">No</td>
-                  </tr>
-                  <tr className="border-b border-gray-200">
-                    <td className="p-4 font-body text-gray-800">Transparent and Ethical Practices</td>
-                    <td className="p-4 text-center font-body text-blue-600 font-semibold">Yes</td>
-                    <td className="p-4 text-center font-body text-blue-600 font-semibold">Yes</td>
-                  </tr>
+                  {comparisonData.map((item, index) => (
+                    <tr key={index} className={`${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'} border-b border-gray-200`}>
+                      <td className="p-4 font-body text-gray-800">{item.facility}</td>
+                      <td className="p-4 text-center font-body font-semibold">
+                        <span className={item.hijazHajjUmrah ? 'text-green-600' : 'text-red-600'}>
+                          {item.hijazHajjUmrah ? 'Yes' : 'No'}
+                        </span>
+                      </td>
+                      <td className="p-4 text-center font-body font-semibold">
+                        <span className={item.otherAgency ? 'text-green-600' : 'text-red-600'}>
+                          {item.otherAgency ? 'Yes' : 'No'}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
 
             <div className="mt-8 text-center">
-              <Button 
-                size="lg"
-                className="bg-golden hover:bg-golden-dark text-sapphire font-body font-semibold px-8 py-3"
-              >
-                Book Your Package
-              </Button>
+              <Link to="/about-us/contact-us">
+                <Button 
+                  size="lg"
+                  className="bg-golden hover:bg-golden-dark text-sapphire font-body font-semibold px-8 py-3"
+                >
+                  Book Your Package
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -500,7 +521,7 @@ const ServiceAreaDetails = () => {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-16 bg-jade">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-display text-4xl font-bold text-white mb-6">
             Hajj pre-registration is going on - 2026
