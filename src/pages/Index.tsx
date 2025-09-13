@@ -26,213 +26,58 @@ import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 
 import { Badge as UIBadge } from '@/components/ui/badge';
-import umrahPackagesData from "@/data/umrahPackages.json";
+import { packageService } from "@/services";
+import type { Package, UmrahPackage, Consultant, KeyHighlight, Testimonial } from "@/services";
 // Note: Replace with your actual Mapbox access token
 // You can get one for free at https://account.mapbox.com/
 mapboxgl.accessToken = "pk.eyJ1IjoibWRyYWtpYnRyb2ZkZXIiLCJhIjoiY21maDJwOWV5MDF3MTJpczhlcXJmYXNsdSJ9.2Ot-AccNp9pold_3I8V3NQ";
 
 const Index = () => {
-  const packages = [
-    {
-      title: "Super Saver - Shifting",
-      category: "Super Saver - Shifting",
-      price: "৳5,80,000",
-      duration: "35-40 Days",
-      rating: 4.99,
-      reviews: 109,
-      image: kaabaTawaf,
-      hotelMakkah: "Hotel Ainan Maluq Al-Omari/Equivalent Hotel | Distance 600-700m.",
-      hotelMadinah: "Mar'azza in Madinah/Similar Hotel | Distance 300-400m",
-      flightsUp: "Direct - SV/BG",
-      flightsDown: "Direct - SV/BG",
-      food: "Breakfast, Lunch & dinner",
-      specialServices: "Ziyara + Guide + Dae + Workshop"
-    },
-    {
-      title: "Economy - Non Shifting", 
-      category: "Economy - Non Shifting",
-      price: "৳6,50,000",
-      duration: "35-40 Days",
-      rating: 4.99,
-      reviews: 109,
-      image: madinahMosque,
-      hotelMakkah: "Hotel Adnan Maluq Al-Omari/Equivalent Hotel | Distance 600-700m.",
-      hotelMadinah: "Mar'azza in Madinah | Distance 300-400m",
-      flightsUp: "Direct - SV/BG",
-      flightsDown: "Direct - SV/BG",
-      food: "Breakfast, Lunch & dinner",
-      specialServices: "Ziyara + Guide + Dae + Workshop",
-      isPopular: true
-    },
-    {
-      title: "Standard - Non Shifting",
-      category: "Standard - Non Shifting", 
-      price: "Starts from ৳7,50,000",
-      duration: "30-36 Days",
-      rating: 4.99,
-      reviews: 109,
-      image: islamicMinarets,
-      hotelMakkah: "Three Star Hotel | Distance 300-400m",
-      hotelMadinah: "Three Star Hotel | Distance 200-300m",
-      flightsUp: "Direct - SV/BG",
-      flightsDown: "Direct - SV/BG", 
-      food: "Breakfast, Lunch & dinner",
-      specialServices: "Ziyara + Guide + Dae + Workshop"
-    },
-    {
-      title: "Premium - Shifting",
-      category: "Premium - Shifting", 
-      price: "৳8,50,000",
-      duration: "20-25 Days",
-      rating: 4.99,
-      reviews: 109,
-      image: muzdalifahNight,
-      hotelMakkah: "Five Star Hotel | Distance 0-150m.",
-      hotelMadinah: "Five Star Hotel | Distance 0-150m",
-      flightsUp: "Direct - SV/BG",
-      flightsDown: "Direct - SV/BG", 
-      food: "Breakfast, Lunch & dinner",
-      specialServices: "Ziyara + Guide + Dae + Workshop"
-    },
-    {
-      title: "Luxury Non-Shifting",
-      category: "Luxury Non-Shifting", 
-      price: "৳13,50,000",
-      duration: "18-21 Days",
-      rating: 4.99,
-      reviews: 109,
-      image: kaabaNight,
-      hotelMakkah: "The Clock Towers | Distance 0m.",
-      hotelMadinah: "Anwar Al Madinah Movenpick/Similar Five star | Distance 0m.",
-      flightsUp: "Direct - SV/BG",
-      flightsDown: "Direct - SV/BG", 
-      food: "Buffet Breakfast, Lunch, Evening Snacks & Dinner",
-      specialServices: "Special Train, Ziyara + Guide + Dae"
-    },
-    {
-      title: "VIP - Non Shifting",
-      category: "VIP - Non Shifting", 
-      price: "৳11,60,000",
-      duration: "18-21 Days",
-      rating: 4.99,
-      reviews: 109,
-      image: masjidAlHaramAerial,
-      hotelMakkah: "Swissotel Al Maqam Makkah/Equivalent Hotel | Distance 0-150m.",
-      hotelMadinah: "Anwar Al Madinah Movenpick/Equivalent Hotel | Distance 0-150m",
-      flightsUp: "Direct - SV/BG",
-      flightsDown: "Direct - SV/BG", 
-      food: "Buffet Breakfast, Lunch, Evening Snacks & Dinner",
-      specialServices: "Special Train, Ziyara + Guide + Dae"
-    }
-  ];
+  // State for data from services
+  const [packages, setPackages] = useState<Package[]>([]);
+  const [umrahPackages, setUmrahPackages] = useState<UmrahPackage[]>([]);
+  const [consultants, setConsultants] = useState<Consultant[]>([]);
+  const [keyHighlights, setKeyHighlights] = useState<KeyHighlight[]>([]);
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+  const [serviceAreas, setServiceAreas] = useState<string[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const consultants = [
-    {
-      name: "Dr. Muhammad Tazammol Hoque",
-      title: "Associate Professor",
-      department: "Dept. of Islamic Studies, Jagannath University",
-      image: muslimScholar1
-    },
-    {
-      name: "Dr. Muhammad Saleh Uddin", 
-      title: "Associate Professor",
-      department: "Dept. of Islamic Studies, Jagannath University", 
-      image: muslimScholar2
-    },
-    {
-      name: "Dr. Muhammad Ahsan Ullah",
-      title: "Associate Professor", 
-      department: "Dept. of Islamic Studies, Jagannath University",
-      image: muslimScholar3
-    },
-    {
-      name: "Tareque Bin Atique",
-      title: "Associate Professor",
-      department: "Dept. of Islamic Studies, Jagannath University",
-      image: muslimScholar4
-    },
-    {
-      name: "Shaikh Mijanur Rahman",
-      title: "B.A (hons), M.A (DU) Imam & Khatib", 
-      department: "Ashford Mosque, England",
-      image: muslimScholar5
-    }
-  ];
+  // Load all data from services on component mount
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        setIsLoading(true);
+        const [
+          hajjPackagesData,
+          umrahPackagesData,
+          consultantsData,
+          keyHighlightsData,
+          testimonialsData,
+          serviceAreasData
+        ] = await Promise.all([
+          packageService.getHajjPackages(),
+          packageService.getUmrahPackages(),
+          packageService.getConsultants(),
+          packageService.getKeyHighlights(),
+          packageService.getTestimonials(),
+          packageService.getServiceAreas()
+        ]);
 
-  const keyHighlights = [
-    { number: "120+", title: "Umrah packages", subtitle: "Provided in last 2 year" },
-    { number: "1000+", title: "Customers", subtitle: "We served" },  
-    { number: "20+", title: "Consultants", subtitle: "Worldwide" }
-  ];
+        setPackages(hajjPackagesData);
+        setUmrahPackages(umrahPackagesData);
+        setConsultants(consultantsData);
+        setKeyHighlights(keyHighlightsData);
+        setTestimonials(testimonialsData);
+        setServiceAreas(serviceAreasData);
+      } catch (error) {
+        console.error('Error loading data:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
 
-  const serviceAreas = [
-    // Dhaka Division
-    "Dhaka", "Faridpur", "Gazipur", "Gopalganj", "Kishoreganj", "Madaripur", "Manikganj", "Munshiganj", 
-    "Narayanganj", "Narsingdi", "Rajbari", "Shariatpur", "Tangail",
-    
-    // Chittagong Division  
-    "Chittagong", "Bandarban", "Brahmanbaria", "Chandpur", "Comilla", "Cox's Bazar", "Feni", "Khagrachhari", 
-    "Lakshmipur", "Noakhali", "Rangamati",
-    
-    // Rajshahi Division
-    "Rajshahi", "Bogura", "Joypurhat", "Naogaon", "Natore", "Nawabganj", "Pabna", "Sirajganj",
-    
-    // Khulna Division
-    "Khulna", "Bagerhat", "Chuadanga", "Jessore", "Jhenaidah", "Kushtia", "Magura", "Meherpur", 
-    "Narail", "Satkhira",
-    
-    // Barishal Division
-    "Barishal", "Barguna", "Bhola", "Jhalokati", "Patuakhali", "Pirojpur",
-    
-    // Sylhet Division
-    "Sylhet", "Habiganj", "Moulvibazar", "Sunamganj",
-    
-    // Rangpur Division
-    "Rangpur", "Dinajpur", "Gaibandha", "Kurigram", "Lalmonirhat", "Nilphamari", "Panchagarh", "Thakurgaon",
-    
-    // Mymensingh Division
-    "Mymensingh", "Jamalpur", "Netrokona", "Sherpur"
-  ];
-
-  // Testimonials data from JSON format
-  const testimonials = [
-    {
-      id: 1,
-      name: "Monir Hossain Noyon",
-      date: "August, 2022",
-      rating: 5,
-      review: "One of the best service. They are very well organized and friendly. Highly recommend for anyone planning their Hajj or Umrah journey. The team was professional and took care of everything.",
-      platform: "Google",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
-    },
-    {
-      id: 2,
-      name: "Fatima Ahmed",
-      date: "September, 2022",
-      rating: 5,
-      review: "Excellent service from start to finish. The accommodation was perfect, very close to Haram. The guides were knowledgeable and helpful throughout the journey. Alhamdulillah, it was a blessed experience.",
-      platform: "Facebook",
-      avatar: "https://images.unsplash.com/photo-1755278338891-e8d8481ff087?w=100&h=100&fit=crop"
-    },
-    {
-      id: 3,
-      name: "Abdul Rahman Khan",
-      date: "October, 2022",
-      rating: 5,
-      review: "Amazing experience with InSha Hajj & Umrah Group. The package was value for money and everything was well organized. The team helped us with visa processing and provided excellent guidance.",
-      platform: "Google",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop"
-    },
-    {
-      id: 4,
-      name: "Khadija Begum",
-      date: "November, 2022",
-      rating: 5,
-      review: "SubhanAllah! What a wonderful journey it was. InSha team made our Umrah very comfortable and hassle-free. The hotels were excellent and the food arrangements were perfect. May Allah bless them.",
-      platform: "TripAdvisor",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop"
-    }
-  ];
+    loadData();
+  }, []);
 
   // Testimonial navigation state
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
@@ -242,15 +87,19 @@ const Index = () => {
 
   // Testimonial navigation functions
   const nextTestimonial = () => {
-    setCurrentTestimonialIndex((prev) => 
-      prev === testimonials.length - 1 ? 0 : prev + 1
-    );
+    if (testimonials && testimonials.length > 0) {
+      setCurrentTestimonialIndex((prev) => 
+        prev === testimonials.length - 1 ? 0 : prev + 1
+      );
+    }
   };
 
   const prevTestimonial = () => {
-    setCurrentTestimonialIndex((prev) => 
-      prev === 0 ? testimonials.length - 1 : prev - 1
-    );
+    if (testimonials && testimonials.length > 0) {
+      setCurrentTestimonialIndex((prev) => 
+        prev === 0 ? testimonials.length - 1 : prev - 1
+      );
+    }
   };
 
   // Back to top functionality
@@ -495,100 +344,97 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {umrahPackagesData.availableUmrahPackages.map((packageData) => {
-              // Map image names to actual imported images
-              const getImageSrc = (imageName: string) => {
-                switch (imageName) {
-                  case 'kaabaTawaf':
-                    return kaabaTawaf;
-                  case 'madinahMosque':
-                    return madinahMosque;
-                  case 'islamicMinarets':
-                    return islamicMinarets;
-                  default:
-                    return kaabaTawaf;
-                }
-              };
-
+            {umrahPackages && umrahPackages.length > 0 ? umrahPackages.map((packageData) => {
               return (
-                <Card key={packageData.id} className="bg-white rounded-2xl shadow-elevated overflow-hidden">
+                <Card key={packageData?.id} className="bg-white rounded-2xl shadow-elevated overflow-hidden">
                   <div className="relative">
                     <div 
                       className="h-48 bg-cover bg-center"
-                      style={{ backgroundImage: `url(${getImageSrc(packageData.image)})` }}
+                      style={{ backgroundImage: `url(${packageData?.image || '/placeholder-package.jpg'})` }}
                     >
                       <div className="absolute top-4 left-4">
                       </div>
                       <div className="absolute top-4 right-4">
-                        <UIBadge className={`${packageData.badge.color} font-semibold`}>
-                          {packageData.badge.text}
+                        <UIBadge className={`${packageData?.badge?.color || 'bg-gray-600 text-white'} font-semibold`}>
+                          {packageData?.badge?.text || 'Package'}
                         </UIBadge>
                       </div>
                     </div>
                   </div>
                   <CardContent className="p-6">
                     <h3 className="font-display text-xl font-bold text-sapphire mb-4">
-                      {packageData.title}
+                      {packageData?.title || 'Package Title'}
                     </h3>
                     
                     <div className="space-y-3 text-sm mb-6">
                       <div className="flex items-center justify-between">
                         <span className="font-semibold text-gray-600">💰 Price</span>
-                        <span className="text-sapphire font-bold">{packageData.price}</span>
+                        <span className="text-sapphire font-bold">{packageData?.price || 'Price TBA'}</span>
                       </div>
                       
-                      {packageData.packages.map((pkg, index) => (
+                      {packageData?.packages && packageData.packages.length > 0 ? packageData.packages.map((pkg, index) => (
                         <div key={index} className="flex items-center justify-between">
-                          <span className="font-semibold text-gray-600">📅 {pkg.name}</span>
-                          <span className="text-gray-700">{pkg.duration}</span>
+                          <span className="font-semibold text-gray-600">📅 {pkg?.name || `Package ${index + 1}`}</span>
+                          <span className="text-gray-700">{pkg?.duration || 'Duration TBA'}</span>
                         </div>
-                      ))}
+                      )) : (
+                        <div className="flex items-center justify-between">
+                          <span className="font-semibold text-gray-600">📅 Package Details</span>
+                          <span className="text-gray-700">Details TBA</span>
+                        </div>
+                      )}
                       
                       <div className="flex items-center justify-between">
                         <span className="font-semibold text-gray-600">🏨 Hotel Makkah</span>
-                        <span className="text-gray-700">{packageData.details.hotelMakkah}</span>
+                        <span className="text-gray-700">{packageData?.details?.hotelMakkah || 'Hotel TBA'}</span>
                       </div>
                       
                       <div className="flex items-center justify-between">
                         <span className="font-semibold text-gray-600">🏨 Hotel Madinah</span>
-                        <span className="text-gray-700">{packageData.details.hotelMadinah}</span>
+                        <span className="text-gray-700">{packageData?.details?.hotelMadinah || 'Hotel TBA'}</span>
                       </div>
                       
                       <div className="flex items-center justify-between">
                         <span className="font-semibold text-gray-600">✈️ Flights Up</span>
-                        <span className="text-gray-700">{packageData.details.flightsUp}</span>
+                        <span className="text-gray-700">{packageData?.details?.flightsUp || 'TBA'}</span>
                       </div>
                       
                       <div className="flex items-center justify-between">
                         <span className="font-semibold text-gray-600">✈️ Flights Down</span>
-                        <span className="text-gray-700">{packageData.details.flightsDown}</span>
+                        <span className="text-gray-700">{packageData?.details?.flightsDown || 'TBA'}</span>
                       </div>
                       
                       <div className="flex items-center justify-between">
                         <span className="font-semibold text-gray-600">🍽️ Food</span>
-                        <span className="text-gray-700">{packageData.details.food}</span>
+                        <span className="text-gray-700">{packageData?.details?.food || 'TBA'}</span>
                       </div>
                       
                       <div className="flex items-center justify-between">
                         <span className="font-semibold text-gray-600">🎯 Special Services</span>
-                        <span className="text-gray-700">{packageData.details.specialServices}</span>
+                        <span className="text-gray-700">{packageData?.details?.specialServices || 'TBA'}</span>
                       </div>
                     </div>
                     
                     <Button className="w-full bg-golden hover:bg-golden-dark text-sapphire font-semibold mb-4">
-                      {packageData.buttonText}
+                      {packageData?.buttonText || 'Book Package'}
                     </Button>
                     
                     <div className="flex items-center justify-center space-x-1">
                       {[...Array(5)].map((_, i) => (
                         <Star key={i} className="w-4 h-4 fill-golden text-golden" />
                       ))}
-                      <span className="ml-2 text-sm font-semibold">{packageData.rating} ({packageData.reviews} Reviews)</span>
+                      <span className="ml-2 text-sm font-semibold">{packageData?.rating || 0} ({packageData?.reviews || 0} Reviews)</span>
                     </div>
                   </CardContent>
                 </Card>
               );
-            })}
+            }) : (
+              <div className="col-span-full text-center py-12">
+                <div className="text-white/60 font-body text-lg">
+                  {isLoading ? 'Loading packages...' : 'No packages available'}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -613,12 +459,18 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {consultants.slice(0, 3).map((consultant, index) => (
+            {consultants && consultants.length > 0 ? consultants.slice(0, 3).map((consultant, index) => (
               <ConsultantCard key={index} {...consultant} />
-            ))}
+            )) : (
+              <div className="col-span-full text-center py-12">
+                <div className="text-white/60 font-body text-lg">
+                  {isLoading ? 'Loading consultants...' : 'No consultants available'}
+                </div>
+              </div>
+            )}
           </div>
 
-          {consultants.length > 3 && (
+          {consultants && consultants.length > 3 && (
             <div className="grid md:grid-cols-2 gap-8 mt-8 max-w-2xl mx-auto">
               {consultants.slice(3).map((consultant, index) => (
                 <ConsultantCard key={index + 3} {...consultant} />
@@ -654,9 +506,15 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {packages.map((pkg, index) => (
+            {packages && packages.length > 0 ? packages.map((pkg, index) => (
               <PackageCard key={index} {...pkg} />
-            ))}
+            )) : (
+              <div className="col-span-full text-center py-12">
+                <div className="text-white/60 font-body text-lg">
+                  {isLoading ? 'Loading packages...' : 'No packages available'}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -685,18 +543,24 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {keyHighlights.map((highlight, index) => (
+            {keyHighlights && keyHighlights.length > 0 ? keyHighlights.map((highlight, index) => (
               <div key={index} className="text-center">
                 <div className="flex items-center justify-center mb-4">
                   {index === 0 && <MapPin className="w-8 h-8 text-white mr-4" />}
                   {index === 1 && <Users className="w-8 h-8 text-white mr-4" />}
                   {index === 2 && <Star className="w-8 h-8 text-white mr-4" />}
-                  <span className="font-display text-5xl font-bold text-golden">{highlight.number}</span>
+                  <span className="font-display text-5xl font-bold text-golden">{highlight?.number || '0'}</span>
                 </div>
-                <h3 className="font-body text-xl font-semibold text-white mb-2">{highlight.title}</h3>
-                <p className="font-body text-white/70">{highlight.subtitle}</p>
+                <h3 className="font-body text-xl font-semibold text-white mb-2">{highlight?.title || 'Loading...'}</h3>
+                <p className="font-body text-white/70">{highlight?.subtitle || ''}</p>
               </div>
-            ))}
+            )) : (
+              <div className="col-span-full text-center py-12">
+                <div className="text-white/60 font-body text-lg">
+                  {isLoading ? 'Loading highlights...' : 'No highlights available'}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -818,68 +682,78 @@ const Index = () => {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <Card className="bg-jade text-white shadow-elevated">
-              <CardContent className="p-8">
-                <div className="flex items-start space-x-6">
-                  <div 
-                    className="w-16 h-16 bg-cover bg-center rounded-full flex-shrink-0"
-                    style={{ backgroundImage: `url('${testimonials[currentTestimonialIndex].avatar}')` }}
-                  ></div>
-                  <div className="flex-1">
-                    <div className="flex items-center justify-between mb-4">
-                      <div>
-                        <h4 className="font-body font-semibold text-lg">{testimonials[currentTestimonialIndex].name}</h4>
-                        <p className="text-sm text-white/80 font-body">{testimonials[currentTestimonialIndex].date}</p>
-                      </div>
-                      <div className="flex items-center space-x-1">
-                        {[...Array(testimonials[currentTestimonialIndex].rating)].map((_, i) => (
-                          <Star key={i} className="w-4 h-4 fill-golden text-golden" />
-                        ))}
-                      </div>
-                    </div>
-                    <p className="font-body text-white/90 leading-relaxed">
-                      {testimonials[currentTestimonialIndex].review.length > 150 
-                        ? `${testimonials[currentTestimonialIndex].review.substring(0, 150)}...` 
-                        : testimonials[currentTestimonialIndex].review}
-                      {testimonials[currentTestimonialIndex].review.length > 150 && (
-                        <span className="text-golden cursor-pointer ml-2">read more</span>
-                      )}
-                    </p>
-                    <div className="mt-4 flex items-center justify-between">
-                      <span className="text-sm text-white/60 font-body">{testimonials[currentTestimonialIndex].platform}</span>
-                      <div className="flex items-center space-x-4">
-                        <button 
-                          onClick={prevTestimonial}
-                          className="text-white/60 hover:text-white transition-colors duration-200 text-xl font-bold"
-                          aria-label="Previous testimonial"
-                        >
-                          ←
-                        </button>
-                        <div className="flex space-x-2">
-                          {testimonials.map((_, index) => (
-                            <button
-                              key={index}
-                              onClick={() => setCurrentTestimonialIndex(index)}
-                              className={`w-2 h-2 rounded-full transition-colors duration-200 ${
-                                index === currentTestimonialIndex ? 'bg-golden' : 'bg-white/30'
-                              }`}
-                              aria-label={`Go to testimonial ${index + 1}`}
-                            />
+            {testimonials && testimonials.length > 0 && testimonials[currentTestimonialIndex] ? (
+              <Card className="bg-jade text-white shadow-elevated">
+                <CardContent className="p-8">
+                  <div className="flex items-start space-x-6">
+                    <div 
+                      className="w-16 h-16 bg-cover bg-center rounded-full flex-shrink-0"
+                      style={{ backgroundImage: `url('${testimonials[currentTestimonialIndex]?.avatar || '/placeholder-avatar.jpg'}')` }}
+                    ></div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-4">
+                        <div>
+                          <h4 className="font-body font-semibold text-lg">{testimonials[currentTestimonialIndex]?.name || 'Anonymous'}</h4>
+                          <p className="text-sm text-white/80 font-body">{testimonials[currentTestimonialIndex]?.date || ''}</p>
+                        </div>
+                        <div className="flex items-center space-x-1">
+                          {[...Array(testimonials[currentTestimonialIndex]?.rating || 0)].map((_, i) => (
+                            <Star key={i} className="w-4 h-4 fill-golden text-golden" />
                           ))}
                         </div>
-                        <button 
-                          onClick={nextTestimonial}
-                          className="text-white/60 hover:text-white transition-colors duration-200 text-xl font-bold"
-                          aria-label="Next testimonial"
-                        >
-                          →
-                        </button>
+                      </div>
+                      <p className="font-body text-white/90 leading-relaxed">
+                        {testimonials[currentTestimonialIndex]?.review && testimonials[currentTestimonialIndex].review.length > 150 
+                          ? `${testimonials[currentTestimonialIndex].review.substring(0, 150)}...` 
+                          : testimonials[currentTestimonialIndex]?.review || 'No review available'}
+                        {testimonials[currentTestimonialIndex]?.review && testimonials[currentTestimonialIndex].review.length > 150 && (
+                          <span className="text-golden cursor-pointer ml-2">read more</span>
+                        )}
+                      </p>
+                      <div className="mt-4 flex items-center justify-between">
+                        <span className="text-sm text-white/60 font-body">{testimonials[currentTestimonialIndex]?.platform || 'Review'}</span>
+                        <div className="flex items-center space-x-4">
+                          <button 
+                            onClick={prevTestimonial}
+                            className="text-white/60 hover:text-white transition-colors duration-200 text-xl font-bold"
+                            aria-label="Previous testimonial"
+                          >
+                            ←
+                          </button>
+                          <div className="flex space-x-2">
+                            {testimonials.map((_, index) => (
+                              <button
+                                key={index}
+                                onClick={() => setCurrentTestimonialIndex(index)}
+                                className={`w-2 h-2 rounded-full transition-colors duration-200 ${
+                                  index === currentTestimonialIndex ? 'bg-golden' : 'bg-white/30'
+                                }`}
+                                aria-label={`Go to testimonial ${index + 1}`}
+                              />
+                            ))}
+                          </div>
+                          <button 
+                            onClick={nextTestimonial}
+                            className="text-white/60 hover:text-white transition-colors duration-200 text-xl font-bold"
+                            aria-label="Next testimonial"
+                          >
+                            →
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            ) : (
+              <Card className="bg-jade text-white shadow-elevated">
+                <CardContent className="p-8 text-center">
+                  <div className="text-white/60 font-body text-lg">
+                    {isLoading ? 'Loading testimonials...' : 'No testimonials available'}
+                  </div>
+                </CardContent>
+              </Card>
+            )}
           </div>
         </div>
       </section>
@@ -901,7 +775,7 @@ const Index = () => {
 
               <ScrollArea className="h-80 pr-4">
                 <div className="grid grid-cols-2 gap-3">
-                  {serviceAreas.map((area, index) => (
+                  {serviceAreas && serviceAreas.length > 0 ? serviceAreas.map((area, index) => (
                     <Link
                       key={index}
                       to={`/service-area/${area.toLowerCase()}`}
@@ -910,7 +784,13 @@ const Index = () => {
                       <MapPin className="w-4 h-4 text-[#5C8D89] group-hover:text-white flex-shrink-0 transition-colors" />
                       <span className="font-body text-sm text-gray-700 group-hover:text-white group-hover:underline transition-colors">{area}</span>
                     </Link>
-                  ))}
+                  )) : (
+                    <div className="col-span-2 text-center py-4">
+                      <div className="text-gray-500 font-body text-sm">
+                        {isLoading ? 'Loading service areas...' : 'No service areas available'}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </ScrollArea>
             </div>

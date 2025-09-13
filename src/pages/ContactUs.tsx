@@ -8,14 +8,17 @@ import Footer from "@/components/Footer";
 import { ArrowLeft, Mail, Phone, MapPin, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
+import { contactService } from "@/services";
+import type { ContactFormData } from "@/services";
 
 const ContactUs = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<ContactFormData>({
     fullName: "",
     phoneNumber: "",
     emailAddress: "",
     comments: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -26,7 +29,7 @@ const ContactUs = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic validation
@@ -39,31 +42,36 @@ const ContactUs = () => {
       return;
     }
 
-    // Here you would typically send the data to your backend
-    console.log("Form submitted:", formData);
-    
-    // In a real application, you would POST this data to your backend API
-    // For demo purposes, we're just logging it
-    const submissionData = {
-      ...formData,
-      submittedAt: new Date().toISOString(),
-      status: 'new'
-    };
-    
-    console.log("Submission data that would be sent to backend:", submissionData);
-    
-    toast({
-      title: "Form Submitted Successfully!",
-      description: "We will contact you soon. Thank you for your interest in our services.",
-    });
+    try {
+      setIsSubmitting(true);
+      
+      // Submit form data using the contact service
+      const submittedData = await contactService.submitContactForm(formData);
+      
+      console.log('Form submitted successfully:', submittedData);
+      
+      toast({
+        title: "Form Submitted Successfully!",
+        description: "We will contact you soon. Thank you for your interest in our services.",
+      });
 
-    // Reset form
-    setFormData({
-      fullName: "",
-      phoneNumber: "",
-      emailAddress: "",
-      comments: ""
-    });
+      // Reset form
+      setFormData({
+        fullName: "",
+        phoneNumber: "",
+        emailAddress: "",
+        comments: ""
+      });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Submission Failed",
+        description: "There was an error submitting your form. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -168,8 +176,9 @@ const ContactUs = () => {
                     type="submit"
                     size="lg" 
                     className="w-full bg-jade hover:bg-jade-dark text-white font-body font-semibold"
+                    disabled={isSubmitting}
                   >
-                    Submit Form
+                    {isSubmitting ? 'Submitting...' : 'Submit Form'}
                   </Button>
                 </form>
               </CardContent>

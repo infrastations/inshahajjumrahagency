@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ArrowLeft, MapPin, Phone, Mail, Clock, Users, Star, FileText, UserCheck, Shield, HeartHandshake, Award, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -8,15 +8,36 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import PackageCard from "@/components/PackageCard";
 import SectionSeparator from "@/components/SectionSeparator";
+import { packageService } from "@/services";
+import type { Package } from "@/services";
 import routeImage from "@/assets/bangladesh-to-mecca-route.jpg";
 
 const ServiceAreaDetails = () => {
   const { district } = useParams<{ district: string }>();
+  const [packages, setPackages] = useState<Package[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [district]); // Re-run when district changes
+  
+  // Load packages from service
+  useEffect(() => {
+    const loadPackages = async () => {
+      try {
+        setIsLoading(true);
+        const packagesData = await packageService.getHajjPackages();
+        setPackages(packagesData);
+      } catch (error) {
+        console.error('Error loading packages:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadPackages();
+  }, []);
   
   // Format district name for display
   const displayDistrict = district?.charAt(0).toUpperCase() + district?.slice(1);
@@ -77,55 +98,6 @@ const ServiceAreaDetails = () => {
       facility: "Transparent and Ethical Practices",
       hijazHajjUmrah: true,
       otherAgency: true
-    }
-  ];
-
-  const packages = [
-    {
-      title: "Super Saver Umrah Package",
-      category: "Super Saver - Shifting",
-      price: "৳5,80,000",
-      duration: "35-40 Days",
-      rating: 5,
-      reviews: 109,
-      image: "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=400&h=300&fit=crop",
-      hotelMakkah: "Standard Hotel | Distance 700-900m",
-      hotelMadinah: "Mar'azza in Madinah | Distance 300-400m",
-      flightsUp: "Direct - SV/BG",
-      flightsDown: "Direct - SV/BG",
-      food: "Breakfast, Lunch & dinner",
-      specialServices: "Ziyara + Guide + Dae + Workshop"
-    },
-    {
-      title: "Economy Umrah Package", 
-      category: "Economy - Non Shifting",
-      price: "৳6,50,000",
-      duration: "35-40 Days",
-      rating: 5,
-      reviews: 107,
-      image: "https://images.unsplash.com/photo-1564769625392-651b530c4482?w=400&h=300&fit=crop",
-      hotelMakkah: "Hotel Adnan Maluq Al-Omari Equivalent Hotel | Distance 600-700m",
-      hotelMadinah: "Hotel Rehab (Hotel Share Basis) | Distance 450-750m",
-      flightsUp: "Direct - SV/BG",
-      flightsDown: "Direct - SV/BG", 
-      food: "Breakfast, Lunch & dinner",
-      specialServices: "Ziyara + Guide + Dae + Workshop",
-      isPopular: true
-    },
-    {
-      title: "Standard Umrah Package",
-      category: "Standard - Non Shifting", 
-      price: "৳7,50,000",
-      duration: "30-36 Days",
-      rating: 5,
-      reviews: 107,
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
-      hotelMakkah: "Three Star Hotel | Distance 300-400m",
-      hotelMadinah: "Three Star Hotel | Distance 200-300m",
-      flightsUp: "Direct - SV/BG",
-      flightsDown: "Direct - SV/BG", 
-      food: "Breakfast, Lunch & dinner",
-      specialServices: "Ziyara + Guide + Dae + Workshop"
     }
   ];
 
@@ -249,9 +221,15 @@ const ServiceAreaDetails = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {packages.map((pkg, index) => (
+            {packages && packages.length > 0 ? packages.map((pkg, index) => (
               <PackageCard key={index} {...pkg} />
-            ))}
+            )) : (
+              <div className="col-span-full text-center py-12">
+                <div className="text-white/60 font-body text-lg">
+                  {isLoading ? 'Loading packages...' : 'No packages available'}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -375,21 +353,27 @@ const ServiceAreaDetails = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {comparisonData.map((item, index) => (
+                  {comparisonData && comparisonData.length > 0 ? comparisonData.map((item, index) => (
                     <tr key={index} className={`${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'} border-b border-gray-200`}>
-                      <td className="p-4 font-body text-gray-800">{item.facility}</td>
+                      <td className="p-4 font-body text-gray-800">{item?.facility || 'Facility'}</td>
                       <td className="p-4 text-center font-body font-semibold">
-                        <span className={item.hijazHajjUmrah ? 'text-green-600' : 'text-red-600'}>
-                          {item.hijazHajjUmrah ? 'Yes' : 'No'}
+                        <span className={item?.hijazHajjUmrah ? 'text-green-600' : 'text-red-600'}>
+                          {item?.hijazHajjUmrah ? 'Yes' : 'No'}
                         </span>
                       </td>
                       <td className="p-4 text-center font-body font-semibold">
-                        <span className={item.otherAgency ? 'text-green-600' : 'text-red-600'}>
-                          {item.otherAgency ? 'Yes' : 'No'}
+                        <span className={item?.otherAgency ? 'text-green-600' : 'text-red-600'}>
+                          {item?.otherAgency ? 'Yes' : 'No'}
                         </span>
                       </td>
                     </tr>
-                  ))}
+                  )) : (
+                    <tr>
+                      <td colSpan={3} className="p-4 text-center text-gray-500">
+                        No comparison data available
+                      </td>
+                    </tr>
+                  )}
                 </tbody>
               </table>
             </div>
