@@ -7,7 +7,6 @@ interface PackageCardProps {
   title: string;
   category: string;
   price: string;
-  originalPrice?: string;
   duration: string;
   rating: number;
   reviews: number;
@@ -25,7 +24,6 @@ const PackageCard = ({
   title, 
   category, 
   price, 
-  originalPrice, 
   duration, 
   rating, 
   reviews, 
@@ -69,9 +67,6 @@ const PackageCard = ({
           <div className="space-y-1">
             <div className="flex items-center space-x-2">
               <span className="text-2xl font-bold text-sapphire font-display">{price}</span>
-              {originalPrice && (
-                <span className="text-sm text-muted-foreground line-through font-body">{originalPrice}</span>
-              )}
             </div>
           </div>
           
