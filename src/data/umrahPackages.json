@@ -1,0 +1,101 @@
+{
+  "availableUmrahPackages": [
+    {
+      "id": "super-saver",
+      "title": "Super Saver Umrah Package",
+      "badge": {
+        "text": "Super Saver",
+        "color": "bg-golden text-sapphire"
+      },
+      "image": "kaabaTawaf",
+      "price": "৳5,25,000 included Food",
+      "packages": [
+        {
+          "name": "Package-1",
+          "duration": "18-Dec-07-Dec (13 Days)"
+        }
+      ],
+      "details": {
+        "hotelMakkah": "Standard Hotel Distance 700-800m",
+        "hotelMadinah": "Standard Hotel Distance 700-800m",
+        "flightsUp": "Transit",
+        "flightsDown": "Transit",
+        "food": "Included Excluded",
+        "specialServices": "Ziyara + Guide + Dae"
+      },
+      "buttonText": "Book Super Saver Now",
+      "rating": 4.99,
+      "reviews": 157
+    },
+    {
+      "id": "economy",
+      "title": "Economy Umrah Package",
+      "badge": {
+        "text": "Most Popular",
+        "color": "bg-blue-600 text-white"
+      },
+      "image": "madinahMosque",
+      "price": "৳6,68,000 included Food",
+      "packages": [
+        {
+          "name": "Package-1",
+          "duration": "08-Dec-07-Dec (13 Days)"
+        },
+        {
+          "name": "Package-2",
+          "duration": "27-Nov-09-Dec (13 Days)"
+        },
+        {
+          "name": "Package-3",
+          "duration": "18-Dec-30-Nov (13 Days)"
+        },
+        {
+          "name": "Package-4",
+          "duration": "24-Dec-05-Jan (13 Days)"
+        },
+        {
+          "name": "Package-5",
+          "duration": "04-Dec-16-Dec (13 Days)"
+        }
+      ],
+      "details": {
+        "hotelMakkah": "Hotel Adnan Maluq Al-Omari Equivalent Hotel Distance 500-700m",
+        "hotelMadinah": "Hotel Rehab (Hotel Share Basis) Equivalent Hotel Distance 600-700m",
+        "flightsUp": "Transit - Air Arabia Gulf Air",
+        "flightsDown": "Transit - Air Arabia Gulf Air",
+        "food": "Included Excluded",
+        "specialServices": "Ziyara + Guide + Dae"
+      },
+      "buttonText": "Choose Economy Package",
+      "rating": 4.99,
+      "reviews": 157
+    },
+    {
+      "id": "standard",
+      "title": "Standard Umrah Package",
+      "badge": {
+        "text": "Premium",
+        "color": "bg-purple-600 text-white"
+      },
+      "image": "islamicMinarets",
+      "price": "৳8,25,000 Food not Included",
+      "packages": [
+        {
+          "name": "Package-1",
+          "duration": "25-Dec-07-Dec (13 Days)"
+        }
+      ],
+      "details": {
+        "hotelMakkah": "Adnan Masjid/Al-Haram Equivalent Hotel Distance 450-750m",
+        "hotelMadinah": "Dar Al-Salam Equivalent Hotel Distance 450-750m",
+        "flightsUp": "Transit - Air Arabia Gulf Air",
+        "flightsDown": "Transit - Air Arabia Gulf Air",
+        "food": "Included Excluded",
+        "specialServices": "Ziyara + Guide + Dae"
+      },
+      "buttonText": "Select Standard Package",
+      "rating": 4.99,
+      "reviews": 157
+    }
+  ]
+}
