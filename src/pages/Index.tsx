@@ -1,34 +1,24 @@
-import Navigation from '@/components/Navigation';
-import Hero from '@/components/Hero';
+import aeroplane from '@/assets/aeroplane.png';
 import CompanyStats from '@/components/CompanyStats';
-import PackageCard from '@/components/PackageCard';
-import ConsultantCard from '@/components/ConsultantCard';
 import Footer from '@/components/Footer';
+import Hero from '@/components/Hero';
+import Navigation from '@/components/Navigation';
 import SectionSeparator from '@/components/SectionSeparator';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Users, MapPin, Clock, Plane, Star, PlayCircle, Map, Phone, ChevronUp } from 'lucide-react';
-import muslimScholar1 from '@/assets/muslim-scholar-1.jpg';
-import muslimScholar2 from '@/assets/muslim-scholar-2.jpg';
-import muslimScholar3 from '@/assets/muslim-scholar-3.jpg';
-import muslimScholar4 from '@/assets/muslim-scholar-4.jpg';
-import muslimScholar5 from '@/assets/muslim-scholar-5.jpg';
-import kaabaTawaf from '@/assets/kaaba-tawaf.jpg';
-import madinahMosque from '@/assets/madinah-mosque.jpg';
-import islamicMinarets from '@/assets/islamic-minarets.jpg';
-import muzdalifahNight from '@/assets/muzdalifah-night.jpg';
-import kaabaNight from '@/assets/kaaba-night.jpg';
-import masjidAlHaramAerial from '@/assets/masjid-al-haram-aerial.jpg';
-import aeroplane from '@/assets/aeroplane.png';
-import React, { useEffect, useRef, useState } from "react";
+import { ChevronUp, MapPin, Plane, PlayCircle, Star } from 'lucide-react';
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
+import { useEffect, useRef, useState } from "react";
+import { Link } from 'react-router-dom';
+import ConsultantsSection from './Index/ConsultantsSection';
+import HajjPackagesSection from './Index/HajjPackagesSection';
+import KeyHighlightsSection from './Index/KeyHighlightsSection';
+import UmrahPackagesSection from './Index/UmrahPackagesSection';
 
-import { Badge as UIBadge } from '@/components/ui/badge';
+import type { Consultant, KeyHighlight, Package, Testimonial, UmrahPackage } from "@/services";
 import { packageService } from "@/services";
-import type { Package, UmrahPackage, Consultant, KeyHighlight, Testimonial } from "@/services";
 // Note: Replace with your actual Mapbox access token
 // You can get one for free at https://account.mapbox.com/
 mapboxgl.accessToken = "pk.eyJ1IjoibWRyYWtpYnRyb2ZkZXIiLCJhIjoiY21maDJwOWV5MDF3MTJpczhlcXJmYXNsdSJ9.2Ot-AccNp9pold_3I8V3NQ";
@@ -325,246 +315,16 @@ const Index = () => {
       <CompanyStats />
       <SectionSeparator />
 
-            {/* Available Umrah Packages from Bangladesh */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-4xl font-bold text-white mb-6">
-              Available Umrah Packages from Bangladesh
-            </h2>
-            <p className="font-body text-lg text-white/90 max-w-4xl mx-auto leading-relaxed mb-8">
-              Plan your Umrah and Ziyarah. Our upcoming Umrah packages will encompass a range of options, including economy and
-              premium packages, designed to accommodate various budgets and preferences.
-            </p>
-            <Button 
-              variant="outline" 
-              className="bg-golden text-sapphire hover:bg-golden-dark font-body font-semibold px-6 py-3 rounded-full"
-            >
-              View All Packages
-            </Button>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {umrahPackages && umrahPackages.length > 0 ? umrahPackages.map((packageData) => {
-              return (
-                <Card key={packageData?.id} className="bg-white rounded-2xl shadow-elevated overflow-hidden">
-                  <div className="relative">
-                    <div 
-                      className="h-48 bg-cover bg-center"
-                      style={{ backgroundImage: `url(${packageData?.image || '/placeholder-package.jpg'})` }}
-                    >
-                      <div className="absolute top-4 left-4">
-                      </div>
-                      <div className="absolute top-4 right-4">
-                        <UIBadge className={`${packageData?.badge?.color || 'bg-gray-600 text-white'} font-semibold`}>
-                          {packageData?.badge?.text || 'Package'}
-                        </UIBadge>
-                      </div>
-                    </div>
-                  </div>
-                  <CardContent className="p-6">
-                    <h3 className="font-display text-xl font-bold text-sapphire mb-4">
-                      {packageData?.title || 'Package Title'}
-                    </h3>
-                    
-                    <div className="space-y-3 text-sm mb-6">
-                      <div className="flex items-center justify-between">
-                        <span className="font-semibold text-gray-600">💰 Price</span>
-                        <span className="text-sapphire font-bold">{packageData?.price || 'Price TBA'}</span>
-                      </div>
-                      
-                      {packageData?.packages && packageData.packages.length > 0 ? packageData.packages.map((pkg, index) => (
-                        <div key={index} className="flex items-center justify-between">
-                          <span className="font-semibold text-gray-600">📅 {pkg?.name || `Package ${index + 1}`}</span>
-                          <span className="text-gray-700">{pkg?.duration || 'Duration TBA'}</span>
-                        </div>
-                      )) : (
-                        <div className="flex items-center justify-between">
-                          <span className="font-semibold text-gray-600">📅 Package Details</span>
-                          <span className="text-gray-700">Details TBA</span>
-                        </div>
-                      )}
-                      
-                      <div className="flex items-center justify-between">
-                        <span className="font-semibold text-gray-600">🏨 Hotel Makkah</span>
-                        <span className="text-gray-700">{packageData?.details?.hotelMakkah || 'Hotel TBA'}</span>
-                      </div>
-                      
-                      <div className="flex items-center justify-between">
-                        <span className="font-semibold text-gray-600">🏨 Hotel Madinah</span>
-                        <span className="text-gray-700">{packageData?.details?.hotelMadinah || 'Hotel TBA'}</span>
-                      </div>
-                      
-                      <div className="flex items-center justify-between">
-                        <span className="font-semibold text-gray-600">✈️ Flights Up</span>
-                        <span className="text-gray-700">{packageData?.details?.flightsUp || 'TBA'}</span>
-                      </div>
-                      
-                      <div className="flex items-center justify-between">
-                        <span className="font-semibold text-gray-600">✈️ Flights Down</span>
-                        <span className="text-gray-700">{packageData?.details?.flightsDown || 'TBA'}</span>
-                      </div>
-                      
-                      <div className="flex items-center justify-between">
-                        <span className="font-semibold text-gray-600">🍽️ Food</span>
-                        <span className="text-gray-700">{packageData?.details?.food || 'TBA'}</span>
-                      </div>
-                      
-                      <div className="flex items-center justify-between">
-                        <span className="font-semibold text-gray-600">🎯 Special Services</span>
-                        <span className="text-gray-700">{packageData?.details?.specialServices || 'TBA'}</span>
-                      </div>
-                    </div>
-                    
-                    <Button className="w-full bg-golden hover:bg-golden-dark text-sapphire font-semibold mb-4">
-                      {packageData?.buttonText || 'Book Package'}
-                    </Button>
-                    
-                    <div className="flex items-center justify-center space-x-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-golden text-golden" />
-                      ))}
-                      <span className="ml-2 text-sm font-semibold">{packageData?.rating || 0} ({packageData?.reviews || 0} Reviews)</span>
-                    </div>
-                  </CardContent>
-                </Card>
-              );
-            }) : (
-              <div className="col-span-full text-center py-12">
-                <div className="text-white/60 font-body text-lg">
-                  {isLoading ? 'Loading packages...' : 'No packages available'}
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
+      <UmrahPackagesSection umrahPackages={umrahPackages} isLoading={isLoading} />
       <SectionSeparator />
 
-      {/* Consultants Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-16">
-            <div className="mb-8 lg:mb-0">
-              <h2 className="font-display text-4xl font-bold text-golden mb-6">
-                Our distinguished Shariah consultants
-              </h2>
-              <p className="font-body text-lg text-white/80 max-w-2xl">
-                Our <span className="text-[#D4AF37] font-semibold">Shariah consultants</span> are esteemed scholars well-versed in the teachings of Islam and possess a deep knowledge of the 
-                Hajj and Umrah rituals.
-              </p>
-            </div>
-            <Button className="bg-golden hover:bg-golden-dark text-sapphire font-body font-semibold">
-              View All Consultants
-            </Button>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {consultants && consultants.length > 0 ? consultants.slice(0, 3).map((consultant, index) => (
-              <ConsultantCard key={index} {...consultant} />
-            )) : (
-              <div className="col-span-full text-center py-12">
-                <div className="text-white/60 font-body text-lg">
-                  {isLoading ? 'Loading consultants...' : 'No consultants available'}
-                </div>
-              </div>
-            )}
-          </div>
-
-          {consultants && consultants.length > 3 && (
-            <div className="grid md:grid-cols-2 gap-8 mt-8 max-w-2xl mx-auto">
-              {consultants.slice(3).map((consultant, index) => (
-                <ConsultantCard key={index + 3} {...consultant} />
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
+      <ConsultantsSection consultants={consultants} isLoading={isLoading} />
       <SectionSeparator />
 
-      {/* Packages Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <div className="flex items-center justify-center mb-8">
-              <div className="w-12 h-12 border-2 border-golden rounded-full flex items-center justify-center">
-                <div className="w-6 h-6 bg-golden rounded-full"></div>
-              </div>
-            </div>
-            <h2 className="font-display text-4xl font-bold text-golden mb-6">
-              Popular Hajj Packages 2026
-            </h2>
-            <p className="font-body text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-              Our popular Hajj packages for 2026 have been meticulously crafted to ensure a seamless and memorable journey. We 
-              prioritize our member's comfort, safety, and well-being throughout their Hajj pilgrimage, providing a worry-free experience.
-            </p>
-            <Button 
-              variant="outline" 
-              className="mt-8 border-golden text-golden hover:bg-golden hover:text-sapphire font-body font-semibold"
-            >
-              View All Packages
-            </Button>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {packages && packages.length > 0 ? packages.map((pkg, index) => (
-              <PackageCard key={index} {...pkg} />
-            )) : (
-              <div className="col-span-full text-center py-12">
-                <div className="text-white/60 font-body text-lg">
-                  {isLoading ? 'Loading packages...' : 'No packages available'}
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
+      <HajjPackagesSection packages={packages} isLoading={isLoading} />
       <SectionSeparator />
 
-      {/* Key Highlights */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <div className="flex items-center justify-center mb-8">
-              <div className="w-16 h-1 bg-golden"></div>
-              <div className="mx-4">
-                <svg className="w-8 h-8 text-golden" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2l2.4 7.2H22l-6 4.8 2.4 7.2L12 16.8 5.6 21.2 8 14l-6-4.8h7.6z"/>
-                </svg>
-              </div>
-              <div className="w-16 h-1 bg-golden"></div>
-            </div>
-            <h2 className="font-display text-4xl font-bold text-golden mb-6">
-              Key Highlights: InSha Hajj & Umrah Group
-            </h2>
-            <p className="font-body text-xl text-white/80 max-w-4xl mx-auto">
-              With a steadfast commitment to <span className="text-[#D4AF37] font-semibold">excellence</span>, 
-              InSha Hajj & Umrah Group has achieved remarkable milestones in serving the pilgrims' community.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {keyHighlights && keyHighlights.length > 0 ? keyHighlights.map((highlight, index) => (
-              <div key={index} className="text-center">
-                <div className="flex items-center justify-center mb-4">
-                  {index === 0 && <MapPin className="w-8 h-8 text-white mr-4" />}
-                  {index === 1 && <Users className="w-8 h-8 text-white mr-4" />}
-                  {index === 2 && <Star className="w-8 h-8 text-white mr-4" />}
-                  <span className="font-display text-5xl font-bold text-golden">{highlight?.number || '0'}</span>
-                </div>
-                <h3 className="font-body text-xl font-semibold text-white mb-2">{highlight?.title || 'Loading...'}</h3>
-                <p className="font-body text-white/70">{highlight?.subtitle || ''}</p>
-              </div>
-            )) : (
-              <div className="col-span-full text-center py-12">
-                <div className="text-white/60 font-body text-lg">
-                  {isLoading ? 'Loading highlights...' : 'No highlights available'}
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
+      <KeyHighlightsSection keyHighlights={keyHighlights} isLoading={isLoading} />
       <SectionSeparator />
 
       {/* Customized Packages */}
