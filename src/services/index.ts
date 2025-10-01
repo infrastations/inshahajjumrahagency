@@ -18,8 +18,3 @@ export type {
   ContactSubmission,
   ContactFormData
 } from './contactService';
-
-// Future service imports can be added here
-// export { userService } from './userService';
-// export { bookingService } from './bookingService';
-// export { paymentService } from './paymentService';
